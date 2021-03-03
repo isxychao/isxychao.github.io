@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="安徽大学教材《数据库系统原理及应用教程》苗雪兰  第一章数据库系统基本概念（题）数据库管理系统的功能：数据定义、数据操纵、数据库运行管理、数据库维护功能。数据库管理系统的功能：数据操作功能（数据的定义、建立、维护、查询和统计）、数据控制功能（对数据安全性和完整性的控制） 数据库系统与文件系统相比的具有以下特点 以数据模型为基础 数据冗余度小、数据共享性高 数据与程序之间具有较高的独立性 通过DB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库系统">
+<meta property="og:url" content="http://example.com/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="vitamins">
+<meta property="og:description" content="安徽大学教材《数据库系统原理及应用教程》苗雪兰  第一章数据库系统基本概念（题）数据库管理系统的功能：数据定义、数据操纵、数据库运行管理、数据库维护功能。数据库管理系统的功能：数据操作功能（数据的定义、建立、维护、查询和统计）、数据控制功能（对数据安全性和完整性的控制） 数据库系统与文件系统相比的具有以下特点 以数据模型为基础 数据冗余度小、数据共享性高 数据与程序之间具有较高的独立性 通过DB">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE3.png">
+<meta property="og:image" content="http://example.com/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE4.png">
+<meta property="og:image" content="http://example.com/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE5.png">
+<meta property="og:image" content="http://example.com/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE6.png">
+<meta property="og:image" content="http://example.com/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE7.png">
+<meta property="og:image" content="http://example.com/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE8.png">
+<meta property="og:image" content="http://example.com/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE9.png">
+<meta property="og:image" content="http://example.com/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE10.png">
+<meta property="og:image" content="http://example.com/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE11.png">
+<meta property="og:image" content="http://example.com/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE12.png">
+<meta property="og:image" content="http://example.com/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE13.png">
+<meta property="og:image" content="http://example.com/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE14.png">
+<meta property="og:image" content="http://example.com/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE15.png">
+<meta property="og:image" content="http://example.com/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE16.png">
+<meta property="article:published_time" content="2021-03-01T08:36:54.000Z">
+<meta property="article:modified_time" content="2021-03-03T09:02:32.280Z">
+<meta property="article:author" content="xychao">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="数据库系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE3.png">
+
+<link rel="canonical" href="http://example.com/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>数据库系统 | vitamins</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">vitamins</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="xychao">
+      <meta itemprop="description" content="xychao的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="vitamins">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据库系统
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-01 16:36:54" itemprop="dateCreated datePublished" datetime="2021-03-01T16:36:54+08:00">2021-03-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-03 17:02:32" itemprop="dateModified" datetime="2021-03-03T17:02:32+08:00">2021-03-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">专业课</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>安徽大学教材《数据库系统原理及应用教程》苗雪兰</p>
+</blockquote>
+<h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="数据库系统基本概念"><a href="#数据库系统基本概念" class="headerlink" title="数据库系统基本概念"></a>数据库系统基本概念</h2><p>（题）数据库管理系统的功能：数据定义、数据操纵、数据库运行管理、数据库维护功能。<br>数据库管理系统的功能：数据操作功能（数据的定义、建立、维护、查询和统计）、数据控制功能（对数据安全性和完整性的控制）</p>
+<h2 id="数据库系统与文件系统相比的具有以下特点"><a href="#数据库系统与文件系统相比的具有以下特点" class="headerlink" title="数据库系统与文件系统相比的具有以下特点"></a>数据库系统与文件系统相比的具有以下特点</h2><ul>
+<li>以数据模型为基础</li>
+<li>数据冗余度小、数据共享性高</li>
+<li>数据与程序之间具有较高的独立性</li>
+<li>通过DBMS进行数据安全性和完整性的控制</li>
+<li>数据的最小存取单位是数据项</li>
+<li>（题）数据结构化</li>
+<li>（题：与文件系统的最大区别）整体数据结构化</li>
+</ul>
+<h1 id="第二章-数据模型与概念模型"><a href="#第二章-数据模型与概念模型" class="headerlink" title="第二章 数据模型与概念模型"></a>第二章 数据模型与概念模型</h1><h2 id="常见的数据模型"><a href="#常见的数据模型" class="headerlink" title="常见的数据模型"></a>常见的数据模型</h2><h3 id="层次数据模型"><a href="#层次数据模型" class="headerlink" title="层次数据模型"></a>层次数据模型</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ul>
+<li>有且仅有一个结点没有双亲结点，这个结点称为根结点</li>
+<li>除根结点之外的其他节点有且只有一个双亲结点</li>
+</ul>
+<h3 id="网状数据模型"><a href="#网状数据模型" class="headerlink" title="网状数据模型"></a>网状数据模型</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><ul>
+<li>有一个以上的结点没有双亲</li>
+<li>结点可以有多于一个的双亲</li>
+</ul>
+<h3 id="关系数据模型"><a href="#关系数据模型" class="headerlink" title="关系数据模型"></a>关系数据模型</h3><p>在关系模型中，数据的逻辑结构是一张二维表，它由行和列组成。<br>是用关系表示实体及其联系</p>
+<h1 id="第三章-数据库系统的设计方法"><a href="#第三章-数据库系统的设计方法" class="headerlink" title="第三章 数据库系统的设计方法"></a>第三章 数据库系统的设计方法</h1><h2 id="数据库系统设计概述"><a href="#数据库系统设计概述" class="headerlink" title="数据库系统设计概述"></a>数据库系统设计概述</h2><h3 id="数据库系统设计的基本步骤"><a href="#数据库系统设计的基本步骤" class="headerlink" title="数据库系统设计的基本步骤"></a>数据库系统设计的基本步骤</h3><p>需求分析阶段、概念结构设计阶段、逻辑结构设计阶段、物理设计阶段、数据库实施阶段、数据库运行和维护阶段</p>
+<h2 id="数据库逻辑结构的设计"><a href="#数据库逻辑结构的设计" class="headerlink" title="数据库逻辑结构的设计"></a>数据库逻辑结构的设计</h2><p>逻辑结构设计的任务就是把概念模型结构转换成某个具体的DBMS所支持的数据模型</p>
+<h2 id="数据库物理结构的设计"><a href="#数据库物理结构的设计" class="headerlink" title="数据库物理结构的设计"></a>数据库物理结构的设计</h2><h3 id="确定数据库的存储结构"><a href="#确定数据库的存储结构" class="headerlink" title="确定数据库的存储结构"></a>确定数据库的存储结构</h3><p>确定数据的存放位置和存储结构要综合考虑存取时间、存储空间利用率和维护代价3方面的因素。3方面之间常相互矛盾，需权衡，选择一个折中方案。</p>
+<h1 id="第四章-关系数据库"><a href="#第四章-关系数据库" class="headerlink" title="第四章 关系数据库"></a>第四章 关系数据库</h1><h2 id="关系模型及其三要素"><a href="#关系模型及其三要素" class="headerlink" title="关系模型及其三要素"></a>关系模型及其三要素</h2><h3 id="关系的完整性"><a href="#关系的完整性" class="headerlink" title="关系的完整性"></a>关系的完整性</h3><p>关系模型中有3类完整性约束：实体完整性、参照完整性和用户定义的完整性</p>
+<h4 id="实体完整性"><a href="#实体完整性" class="headerlink" title="实体完整性"></a>实体完整性</h4><p>若属性A是基本关系R的主属性，则A的值不能为空值</p>
+<h1 id="第七章-关系数据库理论"><a href="#第七章-关系数据库理论" class="headerlink" title="第七章 关系数据库理论"></a>第七章 关系数据库理论</h1><h2 id="关系数据模式的规范化理论"><a href="#关系数据模式的规范化理论" class="headerlink" title="关系数据模式的规范化理论"></a>关系数据模式的规范化理论</h2><h3 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h3><ul>
+<li>函数依赖是码概念的推广</li>
+<li>K是关系模式R的超码当且仅当K-&gt;R(注:K部分属性值相同时，其它所有属性值都相同)</li>
+<li>K是R的候选码当且仅当<ul>
+<li>K-&gt;R,且</li>
+<li>没有$\alpha$$\subset$K,使$\alpha$-&gt;R(不存在K的真子集)</li>
+</ul>
+</li>
+<li>平凡的函数依赖：若$\beta$$\subseteq$$\alpha$，$\alpha$ -&gt; $\beta$</li>
+<li>非平凡的函数依赖：若$\beta$$\nsubseteq$$\alpha$，$\alpha$ -&gt; $\beta$</li>
+</ul>
+<h3 id="函数依赖集的闭包"><a href="#函数依赖集的闭包" class="headerlink" title="函数依赖集的闭包"></a>函数依赖集的闭包</h3><ul>
+<li>给定函数依赖集F，存在其他函数依赖被F<strong>逻辑蕴含</strong>  <ul>
+<li>例，如果A$\rightarrow$B且B$\rightarrow$C,则可推出A$\rightarrow$C（即A$\rightarrow$C被A$\rightarrow$C和B$\rightarrow$C逻辑蕴含）</li>
+</ul>
+</li>
+<li>被F逻辑蕴含的全体函数依赖的集合称为F的<strong>闭包</strong>，用F<sup>+</sup>表示F的闭包</li>
+</ul>
+<h3 id="Armstrong公理"><a href="#Armstrong公理" class="headerlink" title="Armstrong公理"></a>Armstrong公理</h3><ul>
+<li>可利用Armstron公理找出F<sup>+</sup>：<ul>
+<li>若$\beta$$\subseteq$$\alpha$,则$\alpha$$\rightarrow$$\beta$（自反律）</li>
+<li>若$\alpha$$\rightarrow$$\beta$,则$\gamma$$\alpha$$\rightarrow$$\gamma$$\beta$（增补律）</li>
+<li>若$\alpha$$\rightarrow$$\beta$且$\beta$$\rightarrow$$\gamma$，则$\alpha$$\rightarrow$$\gamma$（传递律）</li>
+</ul>
+</li>
+<li>Armstrong公理是<ul>
+<li>正确有效的（不会产生错误的函数依赖）</li>
+<li>完备的（产生所有成立的函数依赖即F<sup>+</sup>）</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE3.png" alt="例题"><br><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE4.png" alt="Armstrong公理的补充定律"></p>
+<h3 id="计算F"><a href="#计算F" class="headerlink" title="计算F+"></a>计算F<sup>+</sup></h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE5.png" alt="计算F+"></p>
+<h3 id="属性集的闭包"><a href="#属性集的闭包" class="headerlink" title="属性集的闭包"></a>属性集的闭包</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE6.png" alt="属性集的闭包"><br><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE7.png" alt="计算$\alpha$&lt;sup&gt;+&lt;/sup&gt;"><br><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE8.png" alt="例题"><br><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE9.png" alt="例题"><br><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE10.png" alt="例题"></p>
+<h4 id="属性闭包的用法"><a href="#属性闭包的用法" class="headerlink" title="属性闭包的用法"></a>属性闭包的用法</h4><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE11.png" alt="属性闭包的用法"></p>
+<h3 id="正则覆盖"><a href="#正则覆盖" class="headerlink" title="正则覆盖"></a>正则覆盖</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1eW411S7b3?p=63&spm_id_from=pageDriver">数据库系统P63</a><br><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE12.png" alt="正则覆盖"><br><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE13.png" alt="正则覆盖"><br><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE14.png" alt="正则覆盖"></p>
+<h3 id="无关属性"><a href="#无关属性" class="headerlink" title="无关属性"></a>无关属性</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE15.png" alt="无关属性"></p>
+<h3 id="模式分解"><a href="#模式分解" class="headerlink" title="模式分解"></a>模式分解</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE16.png" alt="模式分解"></p>
+<h1 id="第八章-数据库保护技术"><a href="#第八章-数据库保护技术" class="headerlink" title="第八章 数据库保护技术"></a>第八章 数据库保护技术</h1><h2 id="数据库完整性"><a href="#数据库完整性" class="headerlink" title="数据库完整性"></a>数据库完整性</h2><p>数据库的完整性是指数据的正确性和相容性</p>
+<h2 id="数据库并发控制"><a href="#数据库并发控制" class="headerlink" title="数据库并发控制"></a>数据库并发控制</h2><h3 id="事务及并发控制的基本概念"><a href="#事务及并发控制的基本概念" class="headerlink" title="事务及并发控制的基本概念"></a>事务及并发控制的基本概念</h3><h4 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h4><p>概念：事务是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是不可分割的工作单位<br>特性：原子性、一致性、隔离性、持续性<br>并发操作带来的数据不一致性包括：丢失修改、不可重复读、读“脏”数据    </p>
+<h3 id="封锁及封锁协议"><a href="#封锁及封锁协议" class="headerlink" title="封锁及封锁协议"></a>封锁及封锁协议</h3><p>（题）封锁机制是实现数据库并发控制的主要方法。</p>
+<h4 id="锁的类型"><a href="#锁的类型" class="headerlink" title="锁的类型"></a>锁的类型</h4><p>排他锁（独占锁或写锁，简称X锁）、共享锁（读锁，简称S锁）</p>
+<h4 id="封锁协议"><a href="#封锁协议" class="headerlink" title="封锁协议"></a>封锁协议</h4><h5 id="一级封锁协议"><a href="#一级封锁协议" class="headerlink" title="一级封锁协议"></a>一级封锁协议</h5><p>协议：事务T在修改数据之前必须对其加X锁，直到事务结束才释放。<br>防止丢失修改，不能保证可重复读、不读“脏”数据</p>
+<h5 id="二级封锁协议"><a href="#二级封锁协议" class="headerlink" title="二级封锁协议"></a>二级封锁协议</h5><p>协议：事务T对要修改的数据先加X锁，直到事务结束才释放X锁；对要读取的数据先加S锁，读完后释放S锁<br>防止丢失修改、读“脏”数据    </p>
+<h5 id="三级封锁协议"><a href="#三级封锁协议" class="headerlink" title="三级封锁协议"></a>三级封锁协议</h5><p>协议：事务T在读取数据前对其先加S锁，在要修改数据之前对其加X锁，直到事务结束后才释放所有锁。<br>防止丢失修改、读“脏”数据、不可重复读</p>
+<h3 id="封锁出现的问题及解决方法"><a href="#封锁出现的问题及解决方法" class="headerlink" title="封锁出现的问题及解决方法"></a>封锁出现的问题及解决方法</h3><h4 id="活锁和死锁"><a href="#活锁和死锁" class="headerlink" title="活锁和死锁"></a>活锁和死锁</h4><h5 id="活锁"><a href="#活锁" class="headerlink" title="活锁"></a>活锁</h5><p>解决方法：先来先服务</p>
+<h1 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h1><p>数据库（DB）<br>数据库管理员（DBA）<br>数据库系统（DBS）<br>数据库管理系统（DBMS）<br>数据定义语言（DDL）<br>数据操纵语言（DML）:通过DML实现数据的插入、修改、删除等数据存取操作的功能<br>数据控制语言（DCL）   </p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="xychao 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"># 笔记</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/" rel="tag"># 数据库系统</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/02/23/C%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88/" rel="prev" title="C语言指针">
+      <i class="fa fa-chevron-left"></i> C语言指针
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/03/02/win10%E5%85%B3%E9%97%AD%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/" rel="next" title="win10关闭自动更新">
+      win10关闭自动更新 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0"><span class="nav-number">1.</span> <span class="nav-text">第一章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">数据库系统基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9B%B8%E6%AF%94%E7%9A%84%E5%85%B7%E6%9C%89%E4%BB%A5%E4%B8%8B%E7%89%B9%E7%82%B9"><span class="nav-number">1.2.</span> <span class="nav-text">数据库系统与文件系统相比的具有以下特点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E4%B8%8E%E6%A6%82%E5%BF%B5%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">第二章 数据模型与概念模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">常见的数据模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.1.1.</span> <span class="nav-text">层次数据模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%8A%B6%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.1.2.</span> <span class="nav-text">网状数据模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.1.3.</span> <span class="nav-text">关系数据模型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">第三章 数据库系统的设计方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%A6%82%E8%BF%B0"><span class="nav-number">3.1.</span> <span class="nav-text">数据库系统设计概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4"><span class="nav-number">3.1.1.</span> <span class="nav-text">数据库系统设计的基本步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">3.2.</span> <span class="nav-text">数据库逻辑结构的设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">3.3.</span> <span class="nav-text">数据库物理结构的设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AE%E5%AE%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-number">3.3.1.</span> <span class="nav-text">确定数据库的存储结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">4.</span> <span class="nav-text">第四章 关系数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E5%8F%8A%E5%85%B6%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="nav-number">4.1.</span> <span class="nav-text">关系模型及其三要素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="nav-number">4.1.1.</span> <span class="nav-text">关系的完整性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BD%93%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="nav-number">4.1.1.1.</span> <span class="nav-text">实体完整性</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E7%90%86%E8%AE%BA"><span class="nav-number">5.</span> <span class="nav-text">第七章 关系数据库理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%BC%8F%E7%9A%84%E8%A7%84%E8%8C%83%E5%8C%96%E7%90%86%E8%AE%BA"><span class="nav-number">5.1.</span> <span class="nav-text">关系数据模式的规范化理论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96"><span class="nav-number">5.1.1.</span> <span class="nav-text">函数依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E9%9B%86%E7%9A%84%E9%97%AD%E5%8C%85"><span class="nav-number">5.1.2.</span> <span class="nav-text">函数依赖集的闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Armstrong%E5%85%AC%E7%90%86"><span class="nav-number">5.1.3.</span> <span class="nav-text">Armstrong公理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97F"><span class="nav-number">5.1.4.</span> <span class="nav-text">计算F+</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7%E9%9B%86%E7%9A%84%E9%97%AD%E5%8C%85"><span class="nav-number">5.1.5.</span> <span class="nav-text">属性集的闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7%E9%97%AD%E5%8C%85%E7%9A%84%E7%94%A8%E6%B3%95"><span class="nav-number">5.1.5.1.</span> <span class="nav-text">属性闭包的用法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A6%86%E7%9B%96"><span class="nav-number">5.1.6.</span> <span class="nav-text">正则覆盖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E5%85%B3%E5%B1%9E%E6%80%A7"><span class="nav-number">5.1.7.</span> <span class="nav-text">无关属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F%E5%88%86%E8%A7%A3"><span class="nav-number">5.1.8.</span> <span class="nav-text">模式分解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BF%9D%E6%8A%A4%E6%8A%80%E6%9C%AF"><span class="nav-number">6.</span> <span class="nav-text">第八章 数据库保护技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="nav-number">6.1.</span> <span class="nav-text">数据库完整性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6"><span class="nav-number">6.2.</span> <span class="nav-text">数据库并发控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E5%8F%8A%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">6.2.1.</span> <span class="nav-text">事务及并发控制的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1"><span class="nav-number">6.2.1.1.</span> <span class="nav-text">事务</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%81%E9%94%81%E5%8F%8A%E5%B0%81%E9%94%81%E5%8D%8F%E8%AE%AE"><span class="nav-number">6.2.2.</span> <span class="nav-text">封锁及封锁协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%94%81%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="nav-number">6.2.2.1.</span> <span class="nav-text">锁的类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%81%E9%94%81%E5%8D%8F%E8%AE%AE"><span class="nav-number">6.2.2.2.</span> <span class="nav-text">封锁协议</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%80%E7%BA%A7%E5%B0%81%E9%94%81%E5%8D%8F%E8%AE%AE"><span class="nav-number">6.2.2.2.1.</span> <span class="nav-text">一级封锁协议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BA%8C%E7%BA%A7%E5%B0%81%E9%94%81%E5%8D%8F%E8%AE%AE"><span class="nav-number">6.2.2.2.2.</span> <span class="nav-text">二级封锁协议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%89%E7%BA%A7%E5%B0%81%E9%94%81%E5%8D%8F%E8%AE%AE"><span class="nav-number">6.2.2.2.3.</span> <span class="nav-text">三级封锁协议</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%81%E9%94%81%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-number">6.2.3.</span> <span class="nav-text">封锁出现的问题及解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B4%BB%E9%94%81%E5%92%8C%E6%AD%BB%E9%94%81"><span class="nav-number">6.2.3.1.</span> <span class="nav-text">活锁和死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B4%BB%E9%94%81"><span class="nav-number">6.2.3.1.1.</span> <span class="nav-text">活锁</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="nav-number">7.</span> <span class="nav-text">名词解释</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="xychao"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">xychao</p>
+  <div class="site-description" itemprop="description">xychao的个人博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/isxychao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;isxychao" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:isxychao@outlook.com" title="E-Mail → mailto:isxychao@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xychao</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
