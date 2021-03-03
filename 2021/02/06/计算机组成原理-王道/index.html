@@ -42,8 +42,8 @@
 <meta property="article:published_time" content="2021-02-06T03:26:29.000Z">
 <meta property="article:modified_time" content="2021-02-07T11:29:33.086Z">
 <meta property="article:author" content="xychao">
-<meta property="article:tag" content="计算机组成原理">
 <meta property="article:tag" content="笔记">
+<meta property="article:tag" content="计算机组成原理">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2021/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E7%8E%8B%E9%81%93/3.jfif">
 
@@ -283,14 +283,17 @@
 <ul>
 <li><p>存储器-存储器（ss）型指令：参与操作的数都放在内存里，从内存某</p>
 <pre><code>      单元中取操作数，操作结果存放至内存另一单元中。
-      因此机器执行这种指令需要多次访问内存。</code></pre>
+      因此机器执行这种指令需要多次访问内存。
+</code></pre>
 </li>
 <li><p>寄存器-寄存器（rr）型指令：需要多个通用寄存器或个别专用寄存</p>
 <pre><code>       器，从寄存器中取操作数，把操作结果放到另一寄存器中。
-       机器执行这种指令的速度很快，不需要访问内存。</code></pre>
+       机器执行这种指令的速度很快，不需要访问内存。
+</code></pre>
 </li>
 <li><p>寄存器-存储器（rs）型指令：执行此类指令，既要访问内存单元，</p>
-<pre><code>       又要访问寄存器</code></pre>
+<pre><code>       又要访问寄存器
+</code></pre>
 <h3 id="CISC和RISC"><a href="#CISC和RISC" class="headerlink" title="CISC和RISC"></a>CISC和RISC</h3><p>CISC（复杂指令系统计算机）<br>RISC（精简指令系统计算机）<br><img src="/2021/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E7%8E%8B%E9%81%93/7.png" alt="CISC和RISC"><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/huangjingzhou/articles/2086622.html">RISC与CISC比较</a><br>RISC指令种类和寻址方式较少</p>
 <h2 id="第五章-中央处理器"><a href="#第五章-中央处理器" class="headerlink" title="第五章 中央处理器"></a>第五章 中央处理器</h2><h3 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h3><p>操作控制器的功能：从主存取出指令，完成指令操作码译码，并产生有关操作控制信号，以解释执行该指令  </p>
 <h4 id="微指令的格式"><a href="#微指令的格式" class="headerlink" title="微指令的格式"></a>微指令的格式</h4><h5 id="水平型微指令"><a href="#水平型微指令" class="headerlink" title="水平型微指令"></a>水平型微指令</h5><p>一次能定义并执行多个并行操作。<br>优点：微程序短，执行速度快<br>缺点：微指令长，编写微程序较麻烦  </p>
@@ -338,7 +341,7 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/wechatpay.png" alt="xychao 微信支付">
+        <img src="/images/wechatpay.jpg" alt="xychao 微信支付">
         <p>微信支付</p>
       </div>
 
@@ -348,8 +351,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag"># 计算机组成原理</a>
               <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"># 笔记</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag"># 计算机组成原理</a>
           </div>
 
         
@@ -542,6 +545,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
