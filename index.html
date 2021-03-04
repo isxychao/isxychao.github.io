@@ -247,7 +247,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-03 22:21:57" itemprop="dateModified" datetime="2021-03-03T22:21:57+08:00">2021-03-03</time>
+                <time title="修改时间：2021-03-04 13:19:50" itemprop="dateModified" datetime="2021-03-04T13:19:50+08:00">2021-03-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -271,7 +271,7 @@
 
       
           <blockquote>
-<p>安徽大学教材《数据库系统原理及应用教程》苗雪兰</p>
+<p>参考<br>安徽大学教材《数据库系统原理及应用教程》苗雪兰<br>《数据库系统概论》王珊</p>
 </blockquote>
 <h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="数据库系统基本概念"><a href="#数据库系统基本概念" class="headerlink" title="数据库系统基本概念"></a>数据库系统基本概念</h2><p>（题）数据库管理系统的功能：数据定义、数据操纵、数据库运行管理、数据库维护功能。<br>数据库管理系统的功能：数据操作功能（数据的定义、建立、维护、查询和统计）、数据控制功能（对数据安全性和完整性的控制）</p>
 <h2 id="数据库系统与文件系统相比的具有以下特点"><a href="#数据库系统与文件系统相比的具有以下特点" class="headerlink" title="数据库系统与文件系统相比的具有以下特点"></a>数据库系统与文件系统相比的具有以下特点</h2><ul>
@@ -283,8 +283,23 @@
 <li>（题）数据结构化</li>
 <li>（题：与文件系统的最大区别）整体数据结构化</li>
 </ul>
-<h2 id="数据库系统的结构"><a href="#数据库系统的结构" class="headerlink" title="数据库系统的结构"></a>数据库系统的结构</h2><h3 id="数据库系统的三级数据模式结构"><a href="#数据库系统的三级数据模式结构" class="headerlink" title="数据库系统的三级数据模式结构"></a>数据库系统的三级数据模式结构</h3><p>逻辑模式（模式）、外模式（子模式）、内模式（存储模式或物理模式）</p>
-<h4 id="二级映像技术及其作用"><a href="#二级映像技术及其作用" class="headerlink" title="二级映像技术及其作用"></a>二级映像技术及其作用</h4><h1 id="第二章-数据模型与概念模型"><a href="#第二章-数据模型与概念模型" class="headerlink" title="第二章 数据模型与概念模型"></a>第二章 数据模型与概念模型</h1><h2 id="常见的数据模型"><a href="#常见的数据模型" class="headerlink" title="常见的数据模型"></a>常见的数据模型</h2><h3 id="层次数据模型"><a href="#层次数据模型" class="headerlink" title="层次数据模型"></a>层次数据模型</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ul>
+<h2 id="数据库系统的结构"><a href="#数据库系统的结构" class="headerlink" title="数据库系统的结构"></a>数据库系统的结构</h2><h3 id="数据库系统的三级数据模式结构"><a href="#数据库系统的三级数据模式结构" class="headerlink" title="数据库系统的三级数据模式结构"></a>数据库系统的三级数据模式结构</h3><ul>
+<li>模式（逻辑模式），是数据库中全体数据的逻辑结构和特征的描述，是所有用户的公共数据视图。  <ul>
+<li>模式实际上是数据库数据在逻辑级上的视图。</li>
+<li>一个数据库只有一个模式</li>
+</ul>
+</li>
+<li>外模式（子模式或用户模式），是数据库用户能够看见和使用的局部数据的逻辑结构和特征的描述，是数据库用户的数据视图，是与某一应用有关的数据的逻辑表示。<ul>
+<li>通常是模式的子集</li>
+<li>一个数据库可以有多个外模式</li>
+</ul>
+</li>
+<li>内模式（存储模式或物理模式），是数据物理结构和存储方式的描述，是数据在数据库内部的组织方式。<ul>
+<li>一个数据库只有一个内模式<h3 id="二级映像技术及其作用"><a href="#二级映像技术及其作用" class="headerlink" title="二级映像技术及其作用"></a>二级映像技术及其作用</h3><h4 id="外模式-模式映像"><a href="#外模式-模式映像" class="headerlink" title="外模式/模式映像"></a>外模式/模式映像</h4>保证了数据与程序的逻辑独立性，简称数据的逻辑独立性<h4 id="模式-内模式映像"><a href="#模式-内模式映像" class="headerlink" title="模式/内模式映像"></a>模式/内模式映像</h4>保证了数据与程序的物理独立性，简称数据的物理独立性 </li>
+</ul>
+</li>
+</ul>
+<h2 id="常见的数据模型"><a href="#常见的数据模型" class="headerlink" title="常见的数据模型"></a>常见的数据模型</h2><h3 id="层次数据模型"><a href="#层次数据模型" class="headerlink" title="层次数据模型"></a>层次数据模型</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ul>
 <li>有且仅有一个结点没有双亲结点，这个结点称为根结点</li>
 <li>除根结点之外的其他节点有且只有一个双亲结点</li>
 </ul>
@@ -293,12 +308,15 @@
 <li>结点可以有多于一个的双亲</li>
 </ul>
 <h3 id="关系数据模型"><a href="#关系数据模型" class="headerlink" title="关系数据模型"></a>关系数据模型</h3><p>在关系模型中，数据的逻辑结构是一张二维表，它由行和列组成。<br>是用关系表示实体及其联系</p>
-<h1 id="第三章-数据库系统的设计方法"><a href="#第三章-数据库系统的设计方法" class="headerlink" title="第三章 数据库系统的设计方法"></a>第三章 数据库系统的设计方法</h1><h2 id="数据库系统设计概述"><a href="#数据库系统设计概述" class="headerlink" title="数据库系统设计概述"></a>数据库系统设计概述</h2><h3 id="数据库系统设计的基本步骤"><a href="#数据库系统设计的基本步骤" class="headerlink" title="数据库系统设计的基本步骤"></a>数据库系统设计的基本步骤</h3><p>需求分析阶段、概念结构设计阶段、逻辑结构设计阶段、物理设计阶段、数据库实施阶段、数据库运行和维护阶段</p>
-<h2 id="数据库逻辑结构的设计"><a href="#数据库逻辑结构的设计" class="headerlink" title="数据库逻辑结构的设计"></a>数据库逻辑结构的设计</h2><p>逻辑结构设计的任务就是把概念模型结构转换成某个具体的DBMS所支持的数据模型</p>
-<h2 id="数据库物理结构的设计"><a href="#数据库物理结构的设计" class="headerlink" title="数据库物理结构的设计"></a>数据库物理结构的设计</h2><h3 id="确定数据库的存储结构"><a href="#确定数据库的存储结构" class="headerlink" title="确定数据库的存储结构"></a>确定数据库的存储结构</h3><p>确定数据的存放位置和存储结构要综合考虑存取时间、存储空间利用率和维护代价3方面的因素。3方面之间常相互矛盾，需权衡，选择一个折中方案。</p>
-<h1 id="第四章-关系数据库"><a href="#第四章-关系数据库" class="headerlink" title="第四章 关系数据库"></a>第四章 关系数据库</h1><h2 id="关系模型及其三要素"><a href="#关系模型及其三要素" class="headerlink" title="关系模型及其三要素"></a>关系模型及其三要素</h2><h3 id="关系的完整性"><a href="#关系的完整性" class="headerlink" title="关系的完整性"></a>关系的完整性</h3><p>关系模型中有3类完整性约束：实体完整性、参照完整性和用户定义的完整性</p>
-<h4 id="实体完整性"><a href="#实体完整性" class="headerlink" title="实体完整性"></a>实体完整性</h4><p>若属性A是基本关系R的主属性，则A的值不能为空值</p>
-<h1 id="第七章-关系数据库理论"><a href="#第七章-关系数据库理论" class="headerlink" title="第七章 关系数据库理论"></a>第七章 关系数据库理论</h1><h2 id="关系数据模式的规范化理论"><a href="#关系数据模式的规范化理论" class="headerlink" title="关系数据模式的规范化理论"></a>关系数据模式的规范化理论</h2><h3 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h3><ul>
+<h1 id="第二章-关系数据库"><a href="#第二章-关系数据库" class="headerlink" title="第二章 关系数据库"></a>第二章 关系数据库</h1><h2 id="关系的完整性"><a href="#关系的完整性" class="headerlink" title="关系的完整性"></a>关系的完整性</h2><p>关系模型中有3类完整性约束：实体完整性、参照完整性和用户定义的完整性</p>
+<h3 id="实体完整性"><a href="#实体完整性" class="headerlink" title="实体完整性"></a>实体完整性</h3><p>若属性A是基本关系R的主属性，则A的值不能为空值</p>
+<h3 id="参照完整性"><a href="#参照完整性" class="headerlink" title="参照完整性"></a>参照完整性</h3><p>参照完整性规则就是定义外码与主码之间的引用规则。<br>参照完整性规则：若属性（或属性组）F是基本关系R的外码，它与基本关系S的主码K<sub>s</sub>相对应（基本关系R和S不一定是不同的关系），则对于R中每个元组在F上的值必须：</p>
+<ul>
+<li>或者取空值（F的每个属性值均为空值）</li>
+<li>或者等于S中某个元组的主码值</li>
+</ul>
+<h2 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h2><h3 id="关系运算"><a href="#关系运算" class="headerlink" title="关系运算"></a>关系运算</h3><p>选择、投影、连接、除运算等</p>
+<h1 id="第六章-关系数据理论"><a href="#第六章-关系数据理论" class="headerlink" title="第六章 关系数据理论"></a>第六章 关系数据理论</h1><h2 id="关系数据模式的规范化理论"><a href="#关系数据模式的规范化理论" class="headerlink" title="关系数据模式的规范化理论"></a>关系数据模式的规范化理论</h2><h3 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h3><ul>
 <li>函数依赖是码概念的推广</li>
 <li>K是关系模式R的超码当且仅当K-&gt;R(注:K部分属性值相同时，其它所有属性值都相同)</li>
 <li>K是R的候选码当且仅当<ul>
@@ -336,8 +354,14 @@
 <h3 id="正则覆盖"><a href="#正则覆盖" class="headerlink" title="正则覆盖"></a>正则覆盖</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1eW411S7b3?p=63&spm_id_from=pageDriver">数据库系统P63</a><br><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE12.png" alt="正则覆盖"><br><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE13.png" alt="正则覆盖"><br><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE14.png" alt="正则覆盖"></p>
 <h3 id="无关属性"><a href="#无关属性" class="headerlink" title="无关属性"></a>无关属性</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE15.png" alt="无关属性"></p>
 <h3 id="模式分解"><a href="#模式分解" class="headerlink" title="模式分解"></a>模式分解</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE16.png" alt="模式分解"></p>
-<h1 id="第八章-数据库保护技术"><a href="#第八章-数据库保护技术" class="headerlink" title="第八章 数据库保护技术"></a>第八章 数据库保护技术</h1><h2 id="数据库完整性"><a href="#数据库完整性" class="headerlink" title="数据库完整性"></a>数据库完整性</h2><p>数据库的完整性是指数据的正确性和相容性</p>
-<h2 id="数据库并发控制"><a href="#数据库并发控制" class="headerlink" title="数据库并发控制"></a>数据库并发控制</h2><h3 id="事务及并发控制的基本概念"><a href="#事务及并发控制的基本概念" class="headerlink" title="事务及并发控制的基本概念"></a>事务及并发控制的基本概念</h3><h4 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h4><p>概念：事务是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是不可分割的工作单位<br>特性：原子性、一致性、隔离性、持续性<br>并发操作带来的数据不一致性包括：丢失修改、不可重复读、读“脏”数据    </p>
+<h1 id="第七章-数据库系统的设计方法"><a href="#第七章-数据库系统的设计方法" class="headerlink" title="第七章 数据库系统的设计方法"></a>第七章 数据库系统的设计方法</h1><h2 id="数据库系统设计概述"><a href="#数据库系统设计概述" class="headerlink" title="数据库系统设计概述"></a>数据库系统设计概述</h2><h3 id="数据库系统设计的基本步骤"><a href="#数据库系统设计的基本步骤" class="headerlink" title="数据库系统设计的基本步骤"></a>数据库系统设计的基本步骤</h3><h4 id="需求分析阶段"><a href="#需求分析阶段" class="headerlink" title="需求分析阶段"></a>需求分析阶段</h4><p>数据字典</p>
+<h4 id="概念结构设计阶段"><a href="#概念结构设计阶段" class="headerlink" title="概念结构设计阶段"></a>概念结构设计阶段</h4><p>E-R模型是用E-R图来描述现实世界的概念模型</p>
+<h4 id="逻辑结构设计阶段"><a href="#逻辑结构设计阶段" class="headerlink" title="逻辑结构设计阶段"></a>逻辑结构设计阶段</h4><p>E-R图向关系模型转换、数据模型优化</p>
+<h4 id="物理设计阶段"><a href="#物理设计阶段" class="headerlink" title="物理设计阶段"></a>物理设计阶段</h4><h4 id="数据库实施阶段"><a href="#数据库实施阶段" class="headerlink" title="数据库实施阶段"></a>数据库实施阶段</h4><h4 id="数据库运行和维护阶段"><a href="#数据库运行和维护阶段" class="headerlink" title="数据库运行和维护阶段"></a>数据库运行和维护阶段</h4><h2 id="数据库逻辑结构的设计"><a href="#数据库逻辑结构的设计" class="headerlink" title="数据库逻辑结构的设计"></a>数据库逻辑结构的设计</h2><p>逻辑结构设计的任务就是把概念模型结构转换成某个具体的DBMS所支持的数据模型</p>
+<h2 id="数据库物理结构的设计"><a href="#数据库物理结构的设计" class="headerlink" title="数据库物理结构的设计"></a>数据库物理结构的设计</h2><h3 id="确定数据库的存储结构"><a href="#确定数据库的存储结构" class="headerlink" title="确定数据库的存储结构"></a>确定数据库的存储结构</h3><p>确定数据的存放位置和存储结构要综合考虑存取时间、存储空间利用率和维护代价3方面的因素。3方面之间常相互矛盾，需权衡，选择一个折中方案。</p>
+<h1 id="第10章-数据库恢复技术"><a href="#第10章-数据库恢复技术" class="headerlink" title="第10章 数据库恢复技术"></a>第10章 数据库恢复技术</h1><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p>概念：事务是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是不可分割的工作单位<br>特性：原子性、一致性、隔离性、持续性  </p>
+<h2 id="恢复的实现技术"><a href="#恢复的实现技术" class="headerlink" title="恢复的实现技术"></a>恢复的实现技术</h2><h3 id="数据转储"><a href="#数据转储" class="headerlink" title="数据转储"></a>数据转储</h3><h3 id="登记日志文件"><a href="#登记日志文件" class="headerlink" title="登记日志文件"></a>登记日志文件</h3><h1 id="第11章-并发控制"><a href="#第11章-并发控制" class="headerlink" title="第11章 并发控制"></a>第11章 并发控制</h1><h2 id="数据库完整性"><a href="#数据库完整性" class="headerlink" title="数据库完整性"></a>数据库完整性</h2><p>数据库的完整性是指数据的正确性和相容性</p>
+<h2 id="数据库并发控制"><a href="#数据库并发控制" class="headerlink" title="数据库并发控制"></a>数据库并发控制</h2><h3 id="并发控制的基本概念"><a href="#并发控制的基本概念" class="headerlink" title="并发控制的基本概念"></a>并发控制的基本概念</h3><p>并发操作带来的数据不一致性包括：丢失修改、不可重复读、读“脏”数据    </p>
 <h3 id="封锁及封锁协议"><a href="#封锁及封锁协议" class="headerlink" title="封锁及封锁协议"></a>封锁及封锁协议</h3><p>（题）封锁机制是实现数据库并发控制的主要方法。</p>
 <h4 id="锁的类型"><a href="#锁的类型" class="headerlink" title="锁的类型"></a>锁的类型</h4><p>排他锁（独占锁或写锁，简称X锁）、共享锁（读锁，简称S锁）</p>
 <h4 id="封锁协议"><a href="#封锁协议" class="headerlink" title="封锁协议"></a>封锁协议</h4><h5 id="一级封锁协议"><a href="#一级封锁协议" class="headerlink" title="一级封锁协议"></a>一级封锁协议</h5><p>协议：事务T在修改数据之前必须对其加X锁，直到事务结束才释放。<br>防止丢失修改，不能保证可重复读、不读“脏”数据</p>
@@ -651,7 +675,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/06/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/06/Hexo-Next%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -665,7 +689,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/06/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B/" class="post-title-link" itemprop="url">博客搭建历程</a>
+            <a href="/2021/02/06/Hexo-Next%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B/" class="post-title-link" itemprop="url">Hexo-Next博客搭建历程</a>
         </h2>
 
         <div class="post-meta">
@@ -682,7 +706,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-03 21:56:32" itemprop="dateModified" datetime="2021-03-03T21:56:32+08:00">2021-03-03</time>
+                <time title="修改时间：2021-03-03 22:28:14" itemprop="dateModified" datetime="2021-03-03T22:28:14+08:00">2021-03-03</time>
               </span>
 
           
@@ -696,8 +720,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="hexo图片问题"><a href="#hexo图片问题" class="headerlink" title="hexo图片问题"></a>hexo图片问题</h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/950f8f13a36c">hexo博客图片问题</a><br><a target="_blank" rel="noopener" href="https://xxjzd.top/2020/08/26/Hexo%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/">Hexo添加图片</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Awt_FuDongLai/article/details/107424098">next主题添加作者头像</a></p>
-
+          <h1 id="hexo图片问题"><a href="#hexo图片问题" class="headerlink" title="hexo图片问题"></a>hexo图片问题</h1><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/950f8f13a36c">hexo博客图片问题</a><br><a target="_blank" rel="noopener" href="https://xxjzd.top/2020/08/26/Hexo%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/">Hexo添加图片</a>  </p>
+<h1 id="添加头像"><a href="#添加头像" class="headerlink" title="添加头像"></a>添加头像</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Awt_FuDongLai/article/details/107424098">next主题添加作者头像</a>   </p>
+<h1 id="开启使用MathJax"><a href="#开启使用MathJax" class="headerlink" title="开启使用MathJax"></a>开启使用MathJax</h1><p>themes/next/_config.yml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">math:</span><br><span class="line">  per_page: false # false:每页都渲染</span><br><span class="line">  </span><br><span class="line">  mathjax:</span><br><span class="line">    enable: true</span><br><span class="line">    # See: https:&#x2F;&#x2F;mhchem.github.io&#x2F;MathJax-mhchem&#x2F;</span><br><span class="line">    mhchem: false</span><br></pre></td></tr></table></figure>
       
     </div>
 
