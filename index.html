@@ -325,7 +325,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-05 00:18:13" itemprop="dateModified" datetime="2021-03-05T00:18:13+08:00">2021-03-05</time>
+                <time title="修改时间：2021-03-05 13:42:38" itemprop="dateModified" datetime="2021-03-05T13:42:38+08:00">2021-03-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -403,6 +403,7 @@
 <li>或者等于S中某个元组的主码值</li>
 </ul>
 <h2 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h2><h3 id="关系运算"><a href="#关系运算" class="headerlink" title="关系运算"></a>关系运算</h3><p>选择、投影、连接、除运算等  </p>
+<h1 id="第4章-数据库安全性"><a href="#第4章-数据库安全性" class="headerlink" title="第4章 数据库安全性"></a>第4章 数据库安全性</h1><h2 id="视图机制"><a href="#视图机制" class="headerlink" title="视图机制"></a>视图机制</h2><p>通过视图机制把要保密的数据对无权存取的用户隐藏起来，从而自动对数据提供一定程度的<strong>安全保护</strong></p>
 <h1 id="第六章-关系数据理论"><a href="#第六章-关系数据理论" class="headerlink" title="第六章 关系数据理论"></a>第六章 关系数据理论</h1><h2 id="关系数据模式的规范化理论"><a href="#关系数据模式的规范化理论" class="headerlink" title="关系数据模式的规范化理论"></a>关系数据模式的规范化理论</h2><h3 id="函数依赖与码"><a href="#函数依赖与码" class="headerlink" title="函数依赖与码"></a>函数依赖与码</h3><ul>
 <li>函数依赖是码概念的推广</li>
 <li>K是关系模式R的超码当且仅当K-&gt;R(注:K部分属性值相同时，其它所有属性值都相同)</li>
@@ -417,9 +418,9 @@
 <h3 id="1NF"><a href="#1NF" class="headerlink" title="1NF"></a>1NF</h3><p>R$\in$ 1NF，产生的问题：</p>
 <ul>
 <li>数据冗余度大</li>
-<li>插入异常</li>
-<li>删除异常</li>
-<li>修改复杂<h3 id="2NF"><a href="#2NF" class="headerlink" title="2NF"></a>2NF</h3>定义：若R$\in$ 1NF,且每一个非主属性完全函数依赖于任何一个候选码，则R$\in$ 2NF。<h3 id="3NF"><a href="#3NF" class="headerlink" title="3NF"></a>3NF</h3><blockquote>
+<li>插入异常：应该插入的数据未被插入</li>
+<li>删除异常：不应删除的信息也删除了</li>
+<li>修改复杂  <h3 id="2NF"><a href="#2NF" class="headerlink" title="2NF"></a>2NF</h3>定义：若R$\in$ 1NF,且每一个非主属性完全函数依赖于任何一个候选码，则R$\in$ 2NF。<h3 id="3NF"><a href="#3NF" class="headerlink" title="3NF"></a>3NF</h3><blockquote>
 <p>定义：设关系模式R&lt;U,F&gt;$\in$ 1NF，若R中不存在这样的码X，属性组Y及非主属性Z(Y$\nsubseteq$Z)使得X$\rightarrow$Y,Y$\rightarrow$Z成立，Y$\nrightarrow$X，则称R&lt;U,F&gt;$\in$ 3NF。  </p>
 </blockquote>
 </li>
