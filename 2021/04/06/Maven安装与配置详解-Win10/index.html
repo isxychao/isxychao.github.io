@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="安装JDK可参照我的另一篇博客 JDK开发环境搭建及环境变量配置（win10）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maven安装与配置详解(Win10)">
+<meta property="og:url" content="http://example.com/2021/04/06/Maven%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3-Win10/index.html">
+<meta property="og:site_name" content="vitamins">
+<meta property="og:description" content="安装JDK可参照我的另一篇博客 JDK开发环境搭建及环境变量配置（win10）">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/isxychao/picgo_photo/raw/master/20180726111606975.png">
+<meta property="og:image" content="https://gitee.com/isxychao/picgo_photo/raw/master/20180726111748473.png">
+<meta property="og:image" content="https://gitee.com/isxychao/picgo_photo/raw/master/20180726112311641.png">
+<meta property="og:image" content="https://gitee.com/isxychao/picgo_photo/raw/master/2018072611292455.png">
+<meta property="og:image" content="https://gitee.com/isxychao/picgo_photo/raw/master/20180726113144471.png">
+<meta property="og:image" content="https://gitee.com/isxychao/picgo_photo/raw/master/20180726113359248.png">
+<meta property="og:image" content="https://gitee.com/isxychao/picgo_photo/raw/master/20180726113721786.png">
+<meta property="og:image" content="https://gitee.com/isxychao/picgo_photo/raw/master/20180726182244915.png">
+<meta property="og:image" content="https://gitee.com/isxychao/picgo_photo/raw/master/20180726183505306.png">
+<meta property="og:image" content="https://gitee.com/isxychao/picgo_photo/raw/master/20180726184202944.png">
+<meta property="og:image" content="https://gitee.com/isxychao/picgo_photo/raw/master/20180726184322763.png">
+<meta property="article:published_time" content="2021-04-06T12:04:52.000Z">
+<meta property="article:modified_time" content="2021-04-06T12:34:13.902Z">
+<meta property="article:author" content="xychao">
+<meta property="article:tag" content="开发">
+<meta property="article:tag" content="Maven">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/isxychao/picgo_photo/raw/master/20180726111606975.png">
+
+<link rel="canonical" href="http://example.com/2021/04/06/Maven%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3-Win10/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Maven安装与配置详解(Win10) | vitamins</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">vitamins</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/06/Maven%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3-Win10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="xychao">
+      <meta itemprop="description" content="xychao的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="vitamins">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Maven安装与配置详解(Win10)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-06 20:04:52 / 修改时间：20:34:13" itemprop="dateCreated datePublished" datetime="2021-04-06T20:04:52+08:00">2021-04-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h1><p>可参照我的另一篇博客 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37904780/article/details/81204326">JDK开发环境搭建及环境变量配置（win10）</a></p>
+<a id="more"></a>
+
+<p>安装过的可直接跳过该步骤。</p>
+<h1 id="下载与安装Maven"><a href="#下载与安装Maven" class="headerlink" title="下载与安装Maven"></a>下载与安装Maven</h1><ol>
+<li>前往<a target="_blank" rel="noopener" href="http://maven.apache.org/download.cgi%E4%B8%8B%E8%BD%BD%E6%9C%80%E6%96%B0%E7%89%88%E7%9A%84Maven%E7%A8%8B%E5%BA%8F">http://maven.apache.org/download.cgi下载最新版的Maven程序</a></li>
+</ol>
+<p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20180726111606975.png"></p>
+<ol start="2">
+<li><p>可将该压缩包解压到一个自己创建的<strong>Apache</strong>文件夹里，以后自己用到<strong>Apache</strong>系列的程序可都放在此目录。<br><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20180726111748473.png"></p>
+</li>
+<li><p>配置环境变量<br>右键“此电脑-&gt;属性-&gt;高级系统设置-&gt;环境变量”<br><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20180726112311641.png"></p>
+</li>
+</ol>
+<p>在<strong>系统变量</strong>栏下点击新建<br>变量名：<code>M2_HOME</code>  变量值：<code>C:\Program Files\Apache Software Foundation\apache-maven-3.5.4</code>(该路径为你的Maven安装目录)</p>
+<p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/2018072611292455.png"></p>
+<p>然后在<strong>系统变量</strong>栏下找到<strong>Path</strong>点击编辑<br><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20180726113144471.png"></p>
+<p>点击<strong>新建</strong>，填入<code>%M2_HOME%\bin</code><br><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20180726113359248.png"></p>
+<ol start="4">
+<li>检查<strong>Maven</strong>的环境变量是否配置成功  </li>
+</ol>
+<p><strong>WIN+R</strong>打开<strong>运行</strong>输入<strong>cmd</strong>打开控制台<br>输入<code>mvn -v</code><br><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20180726113721786.png"></p>
+<p>出现以上图片内容即为配置成功</p>
+<h1 id="修改Maven仓库地址"><a href="#修改Maven仓库地址" class="headerlink" title="修改Maven仓库地址"></a>修改Maven仓库地址</h1><h3 id="修改远程中央仓库"><a href="#修改远程中央仓库" class="headerlink" title="修改远程中央仓库"></a>修改远程中央仓库</h3><p>我们用<strong>Maven</strong>的时候，因为<strong>Maven</strong>自带的远程中央仓库在国外，所以经常会很慢。我们可以把远程中央仓库改为国内阿里的远程仓库。<br>找到你的<strong>Maven</strong>安装位置，打开<strong>conf</strong>目录下的<strong>setting.xml</strong><br><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20180726182244915.png"></p>
+<p>将原文件红色方框处改为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;mirrors&gt;</span><br><span class="line">  &lt;mirror&gt;</span><br><span class="line">    &#x2F;&#x2F;该镜像的id</span><br><span class="line">    &lt;id&gt;nexus-aliyun&lt;&#x2F;id&gt;</span><br><span class="line">    &#x2F;&#x2F;该镜像用来取代的远程仓库，central是中央仓库的id</span><br><span class="line">    &lt;mirrorOf&gt;central&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">    &lt;name&gt;Nexus aliyun&lt;&#x2F;name&gt;</span><br><span class="line">    &#x2F;&#x2F;该镜像的仓库地址，这里是用的阿里的仓库</span><br><span class="line">    &lt;url&gt;http:&#x2F;&#x2F;maven.aliyun.com&#x2F;nexus&#x2F;content&#x2F;groups&#x2F;public&lt;&#x2F;url&gt;</span><br><span class="line">  &lt;&#x2F;mirror&gt;</span><br><span class="line">&lt;&#x2F;mirrors&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="修改本地仓库位置（如果不想修改本地仓库位置则这一步骤可省略）"><a href="#修改本地仓库位置（如果不想修改本地仓库位置则这一步骤可省略）" class="headerlink" title="修改本地仓库位置（如果不想修改本地仓库位置则这一步骤可省略）"></a>修改本地仓库位置（如果不想修改本地仓库位置则这一步骤可省略）</h3><p><strong>Maven</strong>会将下载的类库（jar包）放置到本地的一个目录下（一般默认情况下<strong>Maven</strong>在本机的仓库位于<code>C:\Users\你的电脑用户账号\.m2\repository</code>）<br>创建你要作为本地仓库的文件夹，我所创建文件夹的路径为<code>C:\Program Files\Apache Software Foundation\maven-repository</code><br>在<strong>setting.xml</strong>里找到下图所示<br><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20180726183505306.png"></p>
+<p>在红方框代码下加上一行代码：<br><code>&lt;localRepository&gt;C:\Program Files\Apache Software Foundation\maven-repository&lt;/localRepository&gt;</code></p>
+<h2 id="检测以上关于仓库地修改是否成功"><a href="#检测以上关于仓库地修改是否成功" class="headerlink" title="检测以上关于仓库地修改是否成功"></a>检测以上关于仓库地修改是否成功</h2><p>打开控制台，输入命令<code>mvn help:system</code><br>下图代表远程中央仓库修改成功<br><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20180726184202944.png"></p>
+<p>然后打开本地仓库  </p>
+<p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20180726184322763.png"></p>
+<p>如果出现下载文件，即本地仓库位置修改成功</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%BC%80%E5%8F%91/" rel="tag"># 开发</a>
+              <a href="/tags/Maven/" rel="tag"># Maven</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/04/06/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87%EF%BC%88%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-Vue%EF%BC%89/" rel="prev" title="微信小程序学习笔记（二）--------开发环境准备（微信小程序开发工具+Vue）">
+      <i class="fa fa-chevron-left"></i> 微信小程序学习笔记（二）--------开发环境准备（微信小程序开发工具+Vue）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/04/06/JDK%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%8F%8A%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE%EF%BC%88win10%EF%BC%89/" rel="next" title="JDK开发环境搭建及环境变量配置（win10）">
+      JDK开发环境搭建及环境变量配置（win10） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85JDK"><span class="nav-number">1.</span> <span class="nav-text">安装JDK</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85Maven"><span class="nav-number">2.</span> <span class="nav-text">下载与安装Maven</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9Maven%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80"><span class="nav-number">3.</span> <span class="nav-text">修改Maven仓库地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E8%BF%9C%E7%A8%8B%E4%B8%AD%E5%A4%AE%E4%BB%93%E5%BA%93"><span class="nav-number">3.0.1.</span> <span class="nav-text">修改远程中央仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E4%BD%8D%E7%BD%AE%EF%BC%88%E5%A6%82%E6%9E%9C%E4%B8%8D%E6%83%B3%E4%BF%AE%E6%94%B9%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E4%BD%8D%E7%BD%AE%E5%88%99%E8%BF%99%E4%B8%80%E6%AD%A5%E9%AA%A4%E5%8F%AF%E7%9C%81%E7%95%A5%EF%BC%89"><span class="nav-number">3.0.2.</span> <span class="nav-text">修改本地仓库位置（如果不想修改本地仓库位置则这一步骤可省略）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%B5%8B%E4%BB%A5%E4%B8%8A%E5%85%B3%E4%BA%8E%E4%BB%93%E5%BA%93%E5%9C%B0%E4%BF%AE%E6%94%B9%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F"><span class="nav-number">3.1.</span> <span class="nav-text">检测以上关于仓库地修改是否成功</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="xychao"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">xychao</p>
+  <div class="site-description" itemprop="description">xychao的个人博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/isxychao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;isxychao" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:isxychao@outlook.com" title="E-Mail → mailto:isxychao@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xychao</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
