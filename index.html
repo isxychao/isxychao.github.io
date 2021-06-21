@@ -218,7 +218,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-12 11:50:38" itemprop="dateModified" datetime="2021-06-12T11:50:38+08:00">2021-06-12</time>
+                <time title="修改时间：2021-06-21 08:40:45" itemprop="dateModified" datetime="2021-06-21T08:40:45+08:00">2021-06-21</time>
               </span>
 
           
@@ -234,9 +234,14 @@
       
           <h1 id="Linux下安装Anaconda"><a href="#Linux下安装Anaconda" class="headerlink" title="Linux下安装Anaconda"></a>Linux下安装Anaconda</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/stephen_curry300/article/details/110086293?utm_source=app&app_version=4.8.1">Anaconda安装1</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_41563673/article/details/97402059">Anaconda安装2</a></p>
 <p>安装之时碰到了HTTPERROR的错误，尝试了切换镜像源，https改成http，删去default，切换到离线模式都没解决。<br>直到后来查看错误，发现可能是域名解析问题，之前ping一个域名时是无法连接的，这次莫名其面可以解析域名，然后就安装成功了。  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Anaconda常见命令</span><br><span class="line">1.建立虚拟环境</span><br><span class="line">conda create -n pytorch python&#x3D;3.6</span><br><span class="line">2.激活虚拟环境</span><br><span class="line">source activate pytorch</span><br><span class="line">3.退出该虚拟环境</span><br><span class="line">source deactivate</span><br><span class="line">如果在配置的过程中发生了什么问题，可以先退出虚拟环境然后移除该虚拟环境，再重新配置</span><br><span class="line">conda remove -n pytorch --all</span><br></pre></td></tr></table></figure>
-<h1 id="Anaconda安装pytorch"><a href="#Anaconda安装pytorch" class="headerlink" title="Anaconda安装pytorch"></a>Anaconda安装pytorch</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37240250/article/details/84402102?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-4.baidujs&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-4.baidujs">Pytorch的安装</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/06/11/CV%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -286,7 +291,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-20 09:28:32" itemprop="dateModified" datetime="2021-06-20T09:28:32+08:00">2021-06-20</time>
+                <time title="修改时间：2021-06-21 08:41:05" itemprop="dateModified" datetime="2021-06-21T08:41:05+08:00">2021-06-21</time>
               </span>
 
           
@@ -301,45 +306,14 @@
 
       
           <p>CVPR、PAMI</p>
-<h1 id="语义分割简单了解"><a href="#语义分割简单了解" class="headerlink" title="语义分割简单了解"></a>语义分割简单了解</h1><h2 id="前期知识储备"><a href="#前期知识储备" class="headerlink" title="前期知识储备"></a>前期知识储备</h2><h3 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h3><p>掌握神经网络的基本概念以及前向传播和反向传播的大致过程</p>
-<h3 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h3><p>掌握CNN基本原理，包括卷积、池化、上采样等</p>
-<h3 id="分类网路"><a href="#分类网路" class="headerlink" title="分类网路"></a>分类网路</h3><p>掌握经典分类算法的思想，包括VGG net、AlexNet、GoogLeNet等<br>FCN以经典分类算法为基础，是它们的改良</p>
-<h3 id="PyTorch基础"><a href="#PyTorch基础" class="headerlink" title="PyTorch基础"></a>PyTorch基础</h3><p>掌握Python语言和Pytorch框架的基本用法，以及基础函数的定义</p>
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>语义分割<br>实例分割：有分割的优先级，比如背景不进行分割，同种类也用不同颜色标注<br>全景分割：上边两者的结合<br><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210611163644.png" alt="分割"></p>
-<p>何恺明的论文2019，全景分割。</p>
-<h2 id="语义分割研究现状"><a href="#语义分割研究现状" class="headerlink" title="语义分割研究现状"></a>语义分割研究现状</h2><h3 id="传统方法"><a href="#传统方法" class="headerlink" title="传统方法"></a>传统方法</h3><h4 id="Normalized-cut-归一化切割"><a href="#Normalized-cut-归一化切割" class="headerlink" title="Normalized cut(归一化切割)"></a>Normalized cut(归一化切割)</h4><p>分割具有相同特征的区域，纹理、颜色相同一个整体<br>缺点：效率低、准确度不高、慢<br>每运行一次N-cut，只能切割一次图片，为了分割出图像上的多个物体，需要多次运行。</p>
-<h4 id="Structured-Random-Forests（结构化的随机森林）"><a href="#Structured-Random-Forests（结构化的随机森林）" class="headerlink" title="Structured Random Forests（结构化的随机森林）"></a>Structured Random Forests（结构化的随机森林）</h4><p>优点：改善噪点问题<br>缺点：过拟合，准确率不高</p>
-<h4 id="SVM（支持向量机）"><a href="#SVM（支持向量机）" class="headerlink" title="SVM（支持向量机）"></a>SVM（支持向量机）</h4><h3 id="深度学习卷积神经网络"><a href="#深度学习卷积神经网络" class="headerlink" title="深度学习卷积神经网络"></a>深度学习卷积神经网络</h3><h4 id="FCN"><a href="#FCN" class="headerlink" title="FCN"></a>FCN</h4><h4 id="SegNet"><a href="#SegNet" class="headerlink" title="SegNet"></a>SegNet</h4><h4 id="LinkNet"><a href="#LinkNet" class="headerlink" title="LinkNet"></a>LinkNet</h4><h3 id="深度学习代表问题"><a href="#深度学习代表问题" class="headerlink" title="深度学习代表问题"></a>深度学习代表问题</h3><h4 id="不匹配关系"><a href="#不匹配关系" class="headerlink" title="不匹配关系"></a>不匹配关系</h4><p>SPP、ASPP、PSPNet、GCN、DFN等</p>
-<h4 id="不寻常类"><a href="#不寻常类" class="headerlink" title="不寻常类"></a>不寻常类</h4><p>RedNet、RDFNet</p>
-<p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210611165233.png" alt="深度学习代表问题"></p>
-<h2 id="语义分割实现流程"><a href="#语义分割实现流程" class="headerlink" title="语义分割实现流程"></a>语义分割实现流程</h2><p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210611165452.png" alt="语义分割实现流程"></p>
-<h1 id="FCN常用数据集、指标、研究成果"><a href="#FCN常用数据集、指标、研究成果" class="headerlink" title="FCN常用数据集、指标、研究成果"></a>FCN常用数据集、指标、研究成果</h1><h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210612122742.png"></p>
-<p>CamVid适合新手  CityScapes 适合进阶，比较完整<br>FCN论文使用了NYUDv2和PASCAL VOC<br>上边两种为一类 多了一个通道D（深度）  </p>
-<h2 id="指标"><a href="#指标" class="headerlink" title="指标"></a>指标</h2><p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210612125116.png" alt="语义分割常用指标"></p>
-<p>该三个指标都是越大越好</p>
-<h2 id="FCN研究成果"><a href="#FCN研究成果" class="headerlink" title="FCN研究成果"></a>FCN研究成果</h2><p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210612125241.png"></p>
-<h1 id="论文精读"><a href="#论文精读" class="headerlink" title="论文精读"></a>论文精读</h1><p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210612131336.png" alt="论文结构"></p>
-<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210612135506.png" alt="摘要"></p>
-<h2 id="分割术语"><a href="#分割术语" class="headerlink" title="分割术语"></a>分割术语</h2><p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210612163503.png" alt="分割术语"></p>
-<h2 id="全局信息与局部信息（没搞懂）"><a href="#全局信息与局部信息（没搞懂）" class="headerlink" title="全局信息与局部信息（没搞懂）"></a>全局信息与局部信息（没搞懂）</h2><p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210612183013.png" alt="全局信息与局部信息"></p>
-<h2 id="引言与相关工作"><a href="#引言与相关工作" class="headerlink" title="引言与相关工作"></a>引言与相关工作</h2><p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210612193357.png"></p>
-<h2 id="感受域与平移不变性"><a href="#感受域与平移不变性" class="headerlink" title="感受域与平移不变性"></a>感受域与平移不变性</h2><p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210612194615.png"></p>
-<p>感受域大小指的是这个结点对应原图的区域大小，而不是上一层的区域大小。（约定俗成）<br><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210612200205.png"></p>
-<p>$$RF_1$$ （感受域）一般为1，图中kernel_size（卷积核）为3，stride（步长）为1<br>计算后，$$RF_2$$ = 3, $$RF_3$$ = 5       都是对应着layer1原图的。<br><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210612202349.png"></p>
-<p>CNN不符合平移不变性</p>
-<p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210612213341.png"></p>
-<h2 id="算法架构"><a href="#算法架构" class="headerlink" title="算法架构"></a>算法架构</h2><p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210613201733.png" alt="算法架构"></p>
-<p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210613223723.png" alt="算法架构"></p>
-<p>蓝色为卷积，绿色为池。最后两个比较长的卷积层对应conv6-7。该图为的FCN-8s的融合过程<br>橙色为反卷积还原，灰色代表裁剪（卷积操作时可能会遇到小数、除不尽的情况，需要做一个取整）<br>黄色的地方为相加融合<br>图的下半部分为FCN论文第二版的图，省略了卷积层</p>
-<h2 id="训练技巧-amp-实验结果及分析"><a href="#训练技巧-amp-实验结果及分析" class="headerlink" title="训练技巧&amp;实验结果及分析"></a>训练技巧&amp;实验结果及分析</h2><p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210619231029.png" alt="训练技巧"></p>
-<p>学习率在之后应降低（实验的经验）  </p>
-<p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210619232719.png" alt="实验结果及分析"></p>
-<h2 id="讨论-amp-总结"><a href="#讨论-amp-总结" class="headerlink" title="讨论&amp;总结"></a>讨论&amp;总结</h2><p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210620082623.png" alt="讨论"></p>
-<p>解决方案：<br>1、使用已存在的数据集如NYU<br>2、如图<br><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210620083317.png" alt="论文总结"></p>
-<p>资源利用：硬件充足，使用多块GPU跑模型，得出结果，觉得不好可以进行优化，这些在论文中可以作为点来写。</p>
-<p><img src="https://gitee.com/isxychao/picgo_photo/raw/master/20210620083721.png" alt="回顾"></p>
-<h1 id="一些文章或链接整理"><a href="#一些文章或链接整理" class="headerlink" title="一些文章或链接整理"></a>一些文章或链接整理</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34453588">https://zhuanlan.zhihu.com/p/34453588</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36269513/article/details/80420363">https://blog.csdn.net/qq_36269513/article/details/80420363</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32037333">https://zhuanlan.zhihu.com/p/32037333</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43143670/article/details/104791946">https://blog.csdn.net/weixin_43143670/article/details/104791946</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/06/11/FCN%E5%AD%A6%E4%B9%A0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

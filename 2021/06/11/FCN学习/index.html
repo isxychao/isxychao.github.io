@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="CVPR、PAMI 语义分割简单了解前期知识储备神经网络掌握神经网络的基本概念以及前向传播和反向传播的大致过程 卷积神经网络掌握CNN基本原理，包括卷积、池化、上采样等 分类网路掌握经典分类算法的思想，包括VGG net、AlexNet、GoogLeNet等FCN以经典分类算法为基础，是它们的改良 PyTorch基础掌握Python语言和Pytorch框架的基本用法，以及基础函数的定义 概念语义分">
+  <meta name="description" content="CVPR、PAMI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FCN学习">
 <meta property="og:url" content="http://example.com/2021/06/11/FCN%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="vitamins">
-<meta property="og:description" content="CVPR、PAMI 语义分割简单了解前期知识储备神经网络掌握神经网络的基本概念以及前向传播和反向传播的大致过程 卷积神经网络掌握CNN基本原理，包括卷积、池化、上采样等 分类网路掌握经典分类算法的思想，包括VGG net、AlexNet、GoogLeNet等FCN以经典分类算法为基础，是它们的改良 PyTorch基础掌握Python语言和Pytorch框架的基本用法，以及基础函数的定义 概念语义分">
+<meta property="og:description" content="CVPR、PAMI">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitee.com/isxychao/picgo_photo/raw/master/20210611163644.png">
 <meta property="og:image" content="https://gitee.com/isxychao/picgo_photo/raw/master/20210611165233.png">
@@ -50,7 +50,7 @@
 <meta property="og:image" content="https://gitee.com/isxychao/picgo_photo/raw/master/20210620083317.png">
 <meta property="og:image" content="https://gitee.com/isxychao/picgo_photo/raw/master/20210620083721.png">
 <meta property="article:published_time" content="2021-06-11T08:19:11.000Z">
-<meta property="article:modified_time" content="2021-06-20T01:28:32.447Z">
+<meta property="article:modified_time" content="2021-06-21T00:41:05.997Z">
 <meta property="article:author" content="xychao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gitee.com/isxychao/picgo_photo/raw/master/20210611163644.png">
@@ -243,7 +243,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-20 09:28:32" itemprop="dateModified" datetime="2021-06-20T09:28:32+08:00">2021-06-20</time>
+                <time title="修改时间：2021-06-21 08:41:05" itemprop="dateModified" datetime="2021-06-21T08:41:05+08:00">2021-06-21</time>
               </span>
 
           
@@ -258,6 +258,8 @@
 
       
         <p>CVPR、PAMI</p>
+<a id="more"></a>
+
 <h1 id="语义分割简单了解"><a href="#语义分割简单了解" class="headerlink" title="语义分割简单了解"></a>语义分割简单了解</h1><h2 id="前期知识储备"><a href="#前期知识储备" class="headerlink" title="前期知识储备"></a>前期知识储备</h2><h3 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h3><p>掌握神经网络的基本概念以及前向传播和反向传播的大致过程</p>
 <h3 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h3><p>掌握CNN基本原理，包括卷积、池化、上采样等</p>
 <h3 id="分类网路"><a href="#分类网路" class="headerlink" title="分类网路"></a>分类网路</h3><p>掌握经典分类算法的思想，包括VGG net、AlexNet、GoogLeNet等<br>FCN以经典分类算法为基础，是它们的改良</p>
