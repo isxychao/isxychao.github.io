@@ -187,6 +187,203 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/08/Markdown%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="xychao">
+      <meta itemprop="description" content="xychao的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="vitamins">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/08/Markdown%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">Markdown使用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-08 10:32:24 / 修改时间：10:35:59" itemprop="dateCreated datePublished" datetime="2021-08-08T10:32:24+08:00">2021-08-08</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h1><p>VSC<br>插件 Markdown Preview Enhanced<br><a target="_blank" rel="noopener" href="https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/toc?id=toc-%e4%bb%a5%e5%8f%8a%e8%be%b9%e6%a0%8f-toc-%e7%9a%84%e8%ae%be%e7%bd%ae">设置目录</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/23/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="xychao">
+      <meta itemprop="description" content="xychao的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="vitamins">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/23/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">Linux常用命令</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-07-23 13:52:56 / 修改时间：23:35:26" itemprop="dateCreated datePublished" datetime="2021-07-23T13:52:56+08:00">2021-07-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="查看GPU信息和使用情况"><a href="#查看GPU信息和使用情况" class="headerlink" title="查看GPU信息和使用情况"></a>查看GPU信息和使用情况</h1><p>Linux查看显卡信息：<br><code>lspci | grep -i vga</code></p>
+<p>使用nvidia GPU可以：<br><code>lspci | grep -i nvidia</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@gpu-server-002 ~]# lspci | grep -i nvidia</span><br><span class="line">02:00.0 VGA compatible controller: NVIDIA Corporation Device 1b06 (rev a1)</span><br><span class="line">02:00.1 Audio device: NVIDIA Corporation Device 10ef (rev a1)</span><br><span class="line">03:00.0 VGA compatible controller: NVIDIA Corporation Device 1b06 (rev a1)</span><br><span class="line">03:00.1 Audio device: NVIDIA Corporation Device 10ef (rev a1)</span><br><span class="line">82:00.0 VGA compatible controller: NVIDIA Corporation Device 1b06 (rev a1)</span><br><span class="line">82:00.1 Audio device: NVIDIA Corporation Device 10ef (rev a1)</span><br><span class="line">83:00.0 VGA compatible controller: NVIDIA Corporation Device 1b06 (rev a1)</span><br><span class="line">83:00.1 Audio device: NVIDIA Corporation Device 10ef (rev a1)</span><br></pre></td></tr></table></figure>
+
+<p>前边的序号 “00:0f.0”是显卡的代号(这里是用的虚拟机);  </p>
+<p>查看指定显卡的详细信息用以下指令：<br><code>lspci -v -s 00:0f.0</code></p>
+<p>Linux查看Nvidia显卡信息及使用情况</p>
+<p>Nvidia自带一个命令行工具可以查看显存的使用情况：<br><code>nvidia-smi</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">[root@gpu-server-002 ~]# nvidia-smi</span><br><span class="line">Tue Nov 27 00:20:51 2018       </span><br><span class="line">+-----------------------------------------------------------------------------+</span><br><span class="line">| NVIDIA-SMI 384.98                 Driver Version: 384.98                    |</span><br><span class="line">|-------------------------------+----------------------+----------------------+</span><br><span class="line">| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |</span><br><span class="line">| Fan  Temp  Perf  Pwr:Usage&#x2F;Cap|         Memory-Usage | GPU-Util  Compute M. |</span><br><span class="line">|&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;+&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;+&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;|</span><br><span class="line">|   0  GeForce GTX 108...  On   | 00000000:02:00.0 Off |                  N&#x2F;A |</span><br><span class="line">| 66%   85C    P2   175W &#x2F; 250W |  10795MiB &#x2F; 11172MiB |    100%      Default |</span><br><span class="line">+-------------------------------+----------------------+----------------------+</span><br><span class="line">|   1  GeForce GTX 108...  On   | 00000000:03:00.0 Off |                  N&#x2F;A |</span><br><span class="line">| 56%   83C    P2   162W &#x2F; 250W |  10795MiB &#x2F; 11172MiB |    100%      Default |</span><br><span class="line">+-------------------------------+----------------------+----------------------+</span><br><span class="line">|   2  GeForce GTX 108...  On   | 00000000:82:00.0 Off |                  N&#x2F;A |</span><br><span class="line">| 52%   82C    P2   250W &#x2F; 250W |  10795MiB &#x2F; 11172MiB |     90%      Default |</span><br><span class="line">+-------------------------------+----------------------+----------------------+</span><br><span class="line">|   3  GeForce GTX 108...  On   | 00000000:83:00.0 Off |                  N&#x2F;A |</span><br><span class="line">| 54%   83C    P2   126W &#x2F; 250W |  10795MiB &#x2F; 11172MiB |     82%      Default |</span><br><span class="line">+-------------------------------+----------------------+----------------------+</span><br><span class="line">                                                                                </span><br><span class="line">+-----------------------------------------------------------------------------+</span><br><span class="line">| Processes:                                                       GPU Memory |</span><br><span class="line">|  GPU       PID   Type   Process name                             Usage      |</span><br><span class="line">|&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;|</span><br><span class="line">|    0     11161      C   python                                     10785MiB |</span><br><span class="line">|    1     11161      C   python                                     10785MiB |</span><br><span class="line">|    2     12049      C   python                                     10785MiB |</span><br><span class="line">|    3     12049      C   python                                     10785MiB |</span><br></pre></td></tr></table></figure>
+<p>表头释义： </p>
+<p>Fan：显示风扇转速，数值在0到100%之间，是计算机的期望转速，如果计算机不是通过风扇冷却或者风扇坏了，显示出来就是N/A；<br>Temp：显卡内部的温度，单位是摄氏度；<br>Perf：表征性能状态，从P0到P12，P0表示最大性能，P12表示状态最小性能；<br>Pwr：能耗表示；<br>Bus-Id：涉及GPU总线的相关信息；<br>Disp.A：是Display Active的意思，表示GPU的显示是否初始化；<br>Memory Usage：显存的使用率；<br>Volatile GPU-Util：浮动的GPU利用率；<br>Compute M：计算模式；<br>下边的Processes显示每块GPU上每个进程所使用的显存情况。  </p>
+<p>如果要周期性的输出显卡的使用情况，可以用watch指令实现：<br><code>watch -n 10 nvidia-smi</code></p>
+<p>命令行参数-n后边跟的是执行命令的周期，以s为单位。</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/weifeng1463/p/10025813.html#:~:text=Linux%E6%9F%A5%E7%9C%8B%E6%98%BE%E5%8D%A1%E4%BF%A1%E6%81%AF%EF%BC%9A%20lspci%20%7C%20grep%20-i%20vga%20%E4%BD%BF%E7%94%A8nvidia%20GPU%E5%8F%AF%E4%BB%A5%EF%BC%9A,grep%20-i%20nvidia%20%E5%89%8D%E8%BE%B9%E7%9A%84%E5%BA%8F%E5%8F%B7%20%26quot%3B00%3A0f.0%26quot%3B%E6%98%AF%E6%98%BE%E5%8D%A1%20Linux%E6%9F%A5%E7%9C%8BGPU%E4%BF%A1%E6%81%AF%E5%92%8C%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5%20-%20Oops%21%23">refer</a></p>
+<h1 id="Linux统计文件夹下的文件数目"><a href="#Linux统计文件夹下的文件数目" class="headerlink" title="Linux统计文件夹下的文件数目"></a>Linux统计文件夹下的文件数目</h1><p>Linux下有三个命令：<code>ls</code>、<code>grep</code>、<code>wc</code>。通过这三个命令的组合可以统计目录下文件及文件夹的个数。</p>
+<ul>
+<li>统计当前目录下文件的个数（不包括目录）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ ls -l | grep &quot;^-&quot; | wc -l</span><br></pre></td></tr></table></figure>
+<ul>
+<li>统计当前目录下文件的个数（包括子目录）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ ls -lR| grep &quot;^-&quot; | wc -l</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看某目录下文件夹(目录)的个数（包括子目录）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ ls -lR | grep &quot;^d&quot; | wc -l</span><br></pre></td></tr></table></figure>
+<p><strong>命令解析：</strong></p>
+<ul>
+<li><code>ls -l</code></li>
+</ul>
+<p>长列表输出该目录下文件信息(注意这里的文件是指目录、链接、设备文件等)，每一行对应一个文件或目录，<code>ls -lR</code>是列出所有文件，包括子目录。</p>
+<ul>
+<li><code>grep &quot;^-&quot;</code><br>过滤<code>ls</code>的输出信息，只保留一般文件，只保留目录是<code>grep &quot;^d&quot;</code>。</li>
+<li><code>wc -l</code><br>统计输出信息的行数，统计结果就是输出信息的行数，一行信息对应一个文件，所以就是文件的个数。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="http://noahsnail.com/2017/02/07/2017-02-07-Linux%E7%BB%9F%E8%AE%A1%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E6%95%B0%E7%9B%AE/#:~:text=Linux%E4%B8%8B%E6%9C%89%E4%B8%89%E4%B8%AA%E5%91%BD%E4%BB%A4%EF%BC%9A%20ls%20%E3%80%81%20grep%20%E3%80%81%20wc%20%E3%80%82%20%E9%80%9A%E8%BF%87%E8%BF%99%E4%B8%89%E4%B8%AA%E5%91%BD%E4%BB%A4%E7%9A%84%E7%BB%84%E5%90%88%E5%8F%AF%E4%BB%A5%E7%BB%9F%E8%AE%A1%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%96%87%E4%BB%B6%E5%8F%8A%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E4%B8%AA%E6%95%B0%E3%80%82,-lR%20%E6%98%AF%E5%88%97%E5%87%BA%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%EF%BC%8C%E5%8C%85%E6%8B%AC%E5%AD%90%E7%9B%AE%E5%BD%95%E3%80%82%20%E8%BF%87%E6%BB%A4%20ls%20%E7%9A%84%E8%BE%93%E5%87%BA%E4%BF%A1%E6%81%AF%EF%BC%8C%E5%8F%AA%E4%BF%9D%E7%95%99%E4%B8%80%E8%88%AC%E6%96%87%E4%BB%B6%EF%BC%8C%E5%8F%AA%E4%BF%9D%E7%95%99%E7%9B%AE%E5%BD%95%E6%98%AF%20grep%20%22%5Ed%22%20%E3%80%82">refer</a></p>
+<h1 id="Vim快捷键"><a href="#Vim快捷键" class="headerlink" title="Vim快捷键"></a>Vim快捷键</h1><p><a target="_blank" rel="noopener" href="https://linux.cn/article-8144-1.html#:~:text=%E6%96%B9%E5%90%91%E9%94%AE%20h%20%E5%85%89%E6%A0%87%E5%90%91%E5%B7%A6%E7%A7%BB%E5%8A%A8%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%20j%20%E6%88%96%20Ctrl%20%2B%20J,k%20%E6%88%96%20Ctrl%20%2B%20P%20%E5%85%89%E6%A0%87%E5%90%91%E4%B8%8A%E7%A7%BB%E5%8A%A8%E4%B8%80%E8%A1%8C%20l%20%E5%85%89%E6%A0%87%E5%90%91%E5%8F%B3%E7%A7%BB%E5%8A%A8%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6">Vim快捷键</a></p>
+<h1 id="查询服务器pid对应用户"><a href="#查询服务器pid对应用户" class="headerlink" title="查询服务器pid对应用户"></a>查询服务器pid对应用户</h1><p><code>ps -f -p PID</code></p>
+<h1 id="Linux-下后台运行程序，查看和关闭后台运行程序"><a href="#Linux-下后台运行程序，查看和关闭后台运行程序" class="headerlink" title="Linux 下后台运行程序，查看和关闭后台运行程序"></a>Linux 下后台运行程序，查看和关闭后台运行程序</h1><p>1、运行.sh文件</p>
+<p>直接用./sh 文件就可以运行，但是如果想后台运行，即使关闭当前的终端也可以运行的话，需要nohup命令和&amp;命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">（1）&amp;命令</span><br><span class="line"></span><br><span class="line"> 功能：加在一个命令的最后，可以把这个命令放在后台执行</span><br><span class="line"></span><br><span class="line">（2）nohup命令</span><br><span class="line"></span><br><span class="line"> 功能：不挂断的运行命令</span><br><span class="line"> </span><br><span class="line"> 若ssh连接linux服务器中断后终端关闭仍使进程继续在服务器运行，应使用如下命令，关闭终端应该用exit</span><br><span class="line"> 该命令的一般形式为：nohup command &amp;</span><br><span class="line">　　使用nohup命令提交作业</span><br><span class="line">　　如果使用nohup命令提交作业，那么在缺省情况下该作业的所有输出都被重定向到一个名为nohup.out的文件中，除非另外指定了输出文件：</span><br><span class="line">　　nohup command &gt; myout.file 2&gt;&amp;1 &amp;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">使用 jobs 只能查看当前终端任务。</span><br><span class="line">jobs -l  查看进程PID</span><br><span class="line"></span><br><span class="line">使用 fg %n　关闭。</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/darren817/article/details/79807871">refer</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41519463/article/details/89963166?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-3.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-3.control">other</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/93a45927f013">详解Linux的nohup和&amp;用法和区别</a></p>
+<p>2、查看当前后台运行的命令</p>
+<p>有两个命令可以用，jobs和ps,区别是jobs用于查看当前终端后台运行的任务，换了终端就看不到了。而ps命令用于查看瞬间进程的动态，可以看到别的终端运行的后台进程。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">（1）jobs命令</span><br><span class="line"></span><br><span class="line">功能：查看当前终端后台运行的任务</span><br><span class="line"></span><br><span class="line">jobs -l选项可显示当前终端所有任务的PID，jobs的状态可以是running，stopped，Terminated。+ 号表示当前任务，- 号表示后一个任务。</span><br><span class="line"></span><br><span class="line">（2）ps命令</span><br><span class="line"></span><br><span class="line">功能：查看当前的所有进程</span><br><span class="line"></span><br><span class="line">ps -aux | grep &quot;test.sh&quot;   #a:显示所有程序  u:以用户为主的格式来显示  x:显示所有程序，不以终端机来区分</span><br></pre></td></tr></table></figure>
+
+
+<p>3、关闭当前后台运行的命令</p>
+<pre><code>  kill命令：结束进程
+
+ （1）通过jobs命令查看jobnum，然后执行   kill %jobnum
+
+ （2）通过ps命令查看进程号PID，然后执行  kill %PID
+    kill -9 PID
+    
+   如果是前台进程的话，直接执行 Ctrl+c 就可以终止了
+   
+   
+</code></pre>
+<p>4、前后台进程的切换与控制</p>
+<pre><code> （1）fg命令
+
+   功能：将后台中的命令调至前台继续运行
+
+   如果后台中有多个命令，可以先用jobs查看jobnun，然后用 fg %jobnum 将选中的命令调出。
+
+ （2）Ctrl + z 命令
+
+   功能：将一个正在前台执行的命令放到后台，并且处于暂停状态
+
+ （3）bg命令
+
+   功能：将一个在后台暂停的命令，变成在后台继续执行
+
+   如果后台中有多个命令，可以先用jobs查看jobnum，然后用 bg %jobnum 将选中的命令调出继续执行。
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013846293/article/details/74003051">refer</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/21/Python%E6%96%87%E6%A1%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -218,7 +415,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-22 14:24:26" itemprop="dateModified" datetime="2021-07-22T14:24:26+08:00">2021-07-22</time>
+                <time title="修改时间：2021-07-24 12:50:58" itemprop="dateModified" datetime="2021-07-24T12:50:58+08:00">2021-07-24</time>
               </span>
 
           
@@ -242,6 +439,23 @@
 <p><a target="_blank" rel="noopener" href="https://www.matplotlib.org.cn/">matplotlib</a>  </p>
 <p><a target="_blank" rel="noopener" href="https://pyecharts.org/#/zh-cn/intro">pyecharts</a>  </p>
 <p><a target="_blank" rel="noopener" href="https://wxpy.readthedocs.io/zh/latest/">wxpy</a></p>
+<h1 id="获取文件名操作"><a href="#获取文件名操作" class="headerlink" title="获取文件名操作"></a>获取文件名操作</h1><p><strong>os.listdir()</strong></p>
+<p>语法：os.listdir(path)</p>
+<p>函数用途：输出路径下所有文件的文件名，包括文件夹</p>
+<p>os.listdir  以列表的形式返回指定文件夹的下所有内容，不管是文件还是文件夹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">path &#x3D; &quot;E:&#x2F;vs_code&#x2F;qtVideo&#x2F;lib&quot;</span><br><span class="line">datanames &#x3D; os.listdir(path)</span><br><span class="line">for i in datanames:</span><br><span class="line">	print(i)</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">A_TEST</span><br><span class="line">OpenCVConfig-version.cmake</span><br><span class="line">OpenCVConfig.cmake</span><br><span class="line">OpenCVModules-debug.cmake</span><br><span class="line">OpenCVModules-release.cmake</span><br><span class="line">OpenCVModules.cmake</span><br><span class="line">opencv_aruco330.lib</span><br><span class="line">opencv_aruco330d.lib</span><br><span class="line">opencv_bgsegm330.lib</span><br><span class="line">opencv_bgsegm330d.lib</span><br><span class="line">opencv_bioinspired330.lib</span><br><span class="line">opencv_bioinspired330d.lib</span><br><span class="line">opencv_calib3d330.lib</span><br></pre></td></tr></table></figure>
+<p><strong>os.path.splitext()</strong></p>
+<p>语法：os.path.splitext(文件名)</p>
+<p>函数用途：将文件名和扩展名分开。</p>
+<p>就是以文件名中的’.’作为分隔符，分隔文件名称与文件后缀，以元组的形式返回文件名与后缀。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">name1 &#x3D; &quot;opencv_xphoto330d.lib&quot;</span><br><span class="line">name2 &#x3D; &quot;D:\\opencv_xphoto330d.lib&quot;</span><br><span class="line">result1 &#x3D; os.path.splitext(name1)</span><br><span class="line">result2 &#x3D; os.path.splitext(name2)</span><br><span class="line">print(&quot;result1:&quot;,result1)</span><br><span class="line">print(&quot;result2:&quot;,result2)</span><br><span class="line">print(&quot;type:&quot;,type(result1),type(result2))</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">result1: (&#39;opencv_xphoto330d&#39;, &#39;.lib&#39;)</span><br><span class="line">result2: (&#39;D:\\opencv_xphoto330d&#39;, &#39;.lib&#39;)</span><br><span class="line">type: &lt;class &#39;tuple&#39;&gt; &lt;class &#39;tuple&#39;&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> <strong>os.path.split()</strong></p>
+<p>语法：os.path.split(path)</p>
+<p>函数用途：返回文件的路径和文件名。</p>
+<p>就是以路径最后一个’/‘或者’\‘为分隔，以元祖的形式返回路径与文件名，若只有文件名，则输出文件名与空。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">name1 &#x3D; &quot;opencv_xphoto330d.lib&quot;</span><br><span class="line">name2 &#x3D; &quot;E:\\vs_code\\qtVideo\\opencv_xphoto330d.lib&quot;</span><br><span class="line">name3 &#x3D; &quot;E:\\vs_code\\qtVideo&quot;</span><br><span class="line">result1 &#x3D; os.path.split(name1)</span><br><span class="line">result2 &#x3D; os.path.split(name2)</span><br><span class="line">result3 &#x3D; os.path.split(name3)</span><br><span class="line">print(&quot;result1:&quot;,result1)</span><br><span class="line">print(&quot;result2:&quot;,result2)</span><br><span class="line">print(&quot;result3:&quot;,result3)</span><br><span class="line">print(&quot;type:&quot;,type(result1),type(result2),type(result3))</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">result1: (&#39;&#39;, &#39;opencv_xphoto330d.lib&#39;)</span><br><span class="line">result2: (&#39;E:\\vs_code\\qtVideo&#39;, &#39;opencv_xphoto330d.lib&#39;)</span><br><span class="line">result3: (&#39;E:\\vs_code&#39;, &#39;qtVideo&#39;)</span><br><span class="line">type: &lt;class &#39;tuple&#39;&gt; &lt;class &#39;tuple&#39;&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>os.path.basename()</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import os.path</span><br><span class="line">filePath&#x3D;“K:&#x2F;Project&#x2F;FilterDriver&#x2F;DriverCodes&#x2F;hello.txt”</span><br><span class="line">print(os.path.basename(filePath))</span><br><span class="line">执行的结果仍然是hello.txt。</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -373,7 +587,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-21 17:46:20" itemprop="dateModified" datetime="2021-07-21T17:46:20+08:00">2021-07-21</time>
+                <time title="修改时间：2021-07-26 13:32:36" itemprop="dateModified" datetime="2021-07-26T13:32:36+08:00">2021-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -455,7 +669,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-21 18:32:29" itemprop="dateModified" datetime="2021-07-21T18:32:29+08:00">2021-07-21</time>
+                <time title="修改时间：2021-08-04 19:29:17" itemprop="dateModified" datetime="2021-08-04T19:29:17+08:00">2021-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -768,149 +982,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/06/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87%EF%BC%88%E6%95%B0%E6%8D%AE%E5%BA%93-Spring-Boot%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="xychao">
-      <meta itemprop="description" content="xychao的个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="vitamins">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/06/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87%EF%BC%88%E6%95%B0%E6%8D%AE%E5%BA%93-Spring-Boot%EF%BC%89/" class="post-title-link" itemprop="url">微信小程序学习笔记（一）--------开发环境准备（数据库+Spring Boot）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-04-06 20:02:19 / 修改时间：20:56:15" itemprop="dateCreated datePublished" datetime="2021-04-06T20:02:19+08:00">2021-04-06</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="下载GitHub上的项目包模板"><a href="#下载GitHub上的项目包模板" class="headerlink" title="下载GitHub上的项目包模板"></a>下载GitHub上的项目包模板</h1><p><a target="_blank" rel="noopener" href="https://github.com/linlinjava/litemall">https://github.com/linlinjava/litemall</a>  （该项目用于学习）</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/06/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87%EF%BC%88%E6%95%B0%E6%8D%AE%E5%BA%93-Spring-Boot%EF%BC%89/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/06/%E6%9C%8D%E5%8A%A1%E5%99%A8Ubuntu16-04%E4%B8%8B%E5%AE%89%E8%A3%85mysql/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="xychao">
-      <meta itemprop="description" content="xychao的个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="vitamins">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/06/%E6%9C%8D%E5%8A%A1%E5%99%A8Ubuntu16-04%E4%B8%8B%E5%AE%89%E8%A3%85mysql/" class="post-title-link" itemprop="url">服务器Ubuntu16.04下安装mysql</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-04-06 20:01:21" itemprop="dateCreated datePublished" datetime="2021-04-06T20:01:21+08:00">2021-04-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-21 09:10:39" itemprop="dateModified" datetime="2021-06-21T09:10:39+08:00">2021-06-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>依次执行下面命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br><span class="line">sudo apt install mysql-client</span><br><span class="line">sudo apt install libmysqlclient-dev</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/06/%E6%9C%8D%E5%8A%A1%E5%99%A8Ubuntu16-04%E4%B8%8B%E5%AE%89%E8%A3%85mysql/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -978,7 +1053,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

@@ -28,7 +28,7 @@
 <meta property="og:description" content="Linux下安装AnacondaAnaconda安装1Anaconda安装2 安装之时碰到了HTTPERROR的错误，尝试了切换镜像源，https改成http，删去default，切换到离线模式都没解决。直到后来查看错误，发现可能是域名解析问题，之前ping一个域名时是无法连接的，这次莫名其面可以解析域名，然后就安装成功了。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-11T11:53:10.000Z">
-<meta property="article:modified_time" content="2021-07-21T09:46:20.954Z">
+<meta property="article:modified_time" content="2021-07-26T05:32:36.402Z">
 <meta property="article:author" content="xychao">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="CV">
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-21 17:46:20" itemprop="dateModified" datetime="2021-07-21T17:46:20+08:00">2021-07-21</time>
+                <time title="修改时间：2021-07-26 13:32:36" itemprop="dateModified" datetime="2021-07-26T13:32:36+08:00">2021-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,14 +249,39 @@
 <p>安装之时碰到了HTTPERROR的错误，尝试了切换镜像源，https改成http，删去default，切换到离线模式都没解决。<br>直到后来查看错误，发现可能是域名解析问题，之前ping一个域名时是无法连接的，这次莫名其面可以解析域名，然后就安装成功了。  </p>
 <a id="more"></a>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Anaconda常见命令</span><br><span class="line">1.建立虚拟环境</span><br><span class="line">conda create -n pytorch python&#x3D;3.6</span><br><span class="line">2.激活虚拟环境</span><br><span class="line">source activate pytorch    # 或 conda activate pytorch </span><br><span class="line">3.退出该虚拟环境</span><br><span class="line">source deactivate			# conda deactivate</span><br><span class="line">如果在配置的过程中发生了什么问题，可以先退出虚拟环境然后移除该虚拟环境，再重新配置</span><br><span class="line">conda remove -n pytorch --all</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Anaconda常见命令</span><br><span class="line">1.建立虚拟环境</span><br><span class="line">conda create -n pytorch python&#x3D;3.6</span><br><span class="line">conda create --name pytorch python&#x3D;3.6 anaconda # 其中加入最后一项anaconda命令建立虚拟环境时，会同时安装例如Notebook、Numpy、Scipy、Matplotlib、Pandas等数据分析包，用户也可以不加，选择后续安装。</span><br><span class="line">2.激活虚拟环境</span><br><span class="line">source activate pytorch    # Linux</span><br><span class="line">conda activate pytorch 	# Windows</span><br><span class="line">3.退出该虚拟环境</span><br><span class="line">source deactivate			# conda deactivate</span><br><span class="line">如果在配置的过程中发生了什么问题，可以先退出虚拟环境然后移除该虚拟环境，再重新配置</span><br><span class="line">conda remove -n pytorch --all</span><br><span class="line">4. 克隆虚拟环境</span><br><span class="line">conda create --name python32（新名字） --clone python321（老名字）</span><br><span class="line">5.conda list &#x2F;&#x2F;显示已安装的python包，如果是通过pip安装的包，不会显示</span><br><span class="line">6.conda search xxx &#x2F;&#x2F;搜索python包</span><br><span class="line">7.conda install xxx&#x3D;1.2 &#x2F;&#x2F;安装指定版本python包</span><br><span class="line">8.conda install D:xxx &#x2F;&#x2F;安装本地python包（绝对路径）</span><br><span class="line">9.查看虚拟环境列表</span><br><span class="line">conda info -e</span><br></pre></td></tr></table></figure>
 <h1 id="Anaconda安装pytorch"><a href="#Anaconda安装pytorch" class="headerlink" title="Anaconda安装pytorch"></a>Anaconda安装pytorch</h1><h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37240250/article/details/84402102?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-4.baidujs&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-4.baidujs">Pytorch的安装</a></p>
 <h2 id="win10"><a href="#win10" class="headerlink" title="win10"></a>win10</h2><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ee08ca2c1160">Win10+Anaconda环境下安装Pytorch</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.jb51.net/article/172627.htm#:~:text=%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85anaconda.%20%EF%BC%881%EF%BC%89%E7%82%B9%E5%87%BB%E4%B8%8B%E8%BD%BD%E7%9A%84%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F.%20%EF%BC%882%EF%BC%89%E9%80%89%E6%8B%A9next.%20%EF%BC%883%EF%BC%89I%20Agree.,%EF%BC%884%EF%BC%89%E9%BB%98%E8%AE%A4%E9%80%89%E6%8B%A9just%20me%E5%8D%B3%E5%8F%AF.%20%EF%BC%885%EF%BC%89%E4%B9%8B%E5%90%8Enext%E8%BF%9B%E5%85%A5%E5%AE%89%E8%A3%85%E3%80%81%E5%8F%AF%E4%BB%A5%E6%9B%B4%E6%94%B9%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84.%20%EF%BC%886%EF%BC%89%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E4%B9%8B%E5%90%8E%E7%82%B9%E5%87%BBwindows%E5%8D%B3%E5%8F%AF%E5%87%BA%E7%8E%B0%E6%89%80%E5%AE%89%E8%A3%85%E5%8C%85%E9%87%8C%E6%89%80%E6%9C%89%E7%9A%84%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F.%20%EF%BC%887%EF%BC%89%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E6%89%80%E5%9C%A8%E4%BD%8D%E7%BD%AE%EF%BC%8C%E5%88%9B%E5%BB%BA%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F.">win10下安装Anaconda的教程（python环境+jupyter_notebook)</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/clschao/articles/10906415.html#:~:text=Jupyter%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8.%201%E3%80%81%20%E9%A6%96%E5%85%88%E6%88%91%E4%BB%AC%E5%9C%A8%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E9%87%8C%E9%9D%A2%E6%89%BE%E5%88%B0Anaconda%EF%BC%8C%E9%87%8C%E9%9D%A2%E6%9C%89%E4%B8%80%E9%A1%B9Jupyter,Notebook%EF%BC%8C%E7%82%B9%E5%87%BB%E5%AE%83%E4%BB%A5%E5%90%8E%E5%B0%86%E6%89%93%E5%BC%80%E4%B8%8B%E9%9D%A2%E7%9A%84%E7%95%8C%E9%9D%A2%EF%BC%8C%20%E8%BF%99%E4%B8%AA%E7%95%8C%E9%9D%A2%E7%9C%8B%E7%BD%91%E5%9D%80%E5%B0%B1%E7%9F%A5%E9%81%93%EF%BC%8C%E6%98%AF%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%89%93%E5%BC%80%E7%9A%84%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%EF%BC%8C%E9%82%A3%E4%B9%88%E9%99%A4%E4%BA%86%E5%8F%AF%E4%BB%A5%E4%BB%8Eanaconda%E9%87%8C%E9%9D%A2%E6%89%93%E5%BC%80%EF%BC%8C%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%9C%A8CMD%E7%AA%97%E5%8F%A3%E9%87%8C%E9%9D%A2%E8%BE%93%E5%85%A5jupyter%20notebook%E7%84%B6%E5%90%8E%E5%9B%9E%E8%BD%A6%EF%BC%8C%E5%90%8C%E6%A0%B7%E7%9A%84%E4%B9%9F%E5%8F%AF%E4%BB%A5%E6%89%93%E5%BC%80%E8%BF%99%E4%B8%AA%E7%95%8C%E9%9D%A2%E3%80%82.">Jupyter简单使用</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ef1ae10ba950">Anaconda + VSCode 最详细教程</a></p>
 <p>这个好使<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43744286/article/details/102664556?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-3.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-3.control">win10下在VScode终端中无法用conda activate激活虚拟环境</a></p>
-<p>在安装Anaconda前若win10已安装了python，安装Anaconda后会使用其自带的python<br>若删除Anaconda的环境变量，则可恢复使用原python  </p>
+<p>在安装Anaconda前若win10已安装了python，安装Anaconda后会使用其自带的python<br>若删除Anaconda的环境变量，则可恢复使用原python<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/y_dd6011/article/details/104650369?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_title~default-1.control&spm=1001.2101.3001.4242">win10+pytorch1.4+cuda10.1安装：从显卡驱动开始</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import torch   # 没报错说明pytorch安装成功</span><br><span class="line">print(torch.version.cuda) # 查看cuda版本</span><br><span class="line">print(torch.cuda.is_available()) # 查看显卡是否可用，True表示可用</span><br></pre></td></tr></table></figure>
+
+
+<p>卸载Pytorch</p>
+<p>1、使用conda卸载Pytorch</p>
+<pre><code>conda uninstall pytorch
+conda uninstall libtorch
+</code></pre>
+<p>2、使用pip卸载Pytorch</p>
+<p>pip uninstall torch</p>
+<p>如何查看当前pytorch版本</p>
+<p>有时候我们想要知道当前的pytorch版本，我们可以使用如下代码打印出当前的版本：</p>
+<p>进入Python</p>
+<pre><code>import torch
+print(torch.__version__)
+</code></pre>
+<h2 id="WSL2"><a href="#WSL2" class="headerlink" title="WSL2"></a>WSL2</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ww965058589/article/details/119087457">搭建PyTorch学习环境</a></p>
+<h1 id="PyTorch使用出现的问题"><a href="#PyTorch使用出现的问题" class="headerlink" title="PyTorch使用出现的问题"></a>PyTorch使用出现的问题</h1><p>PyTorch：The “freeze_support()” line can be omitted if the program is not going to be frozen</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/shenfuli/article/details/103969964">https://blog.csdn.net/shenfuli/article/details/103969964</a></p>
+<p>UnicodeDecodeError: ‘gbk’ codec can’t decode byte 0xad in position 607: illegal multibyte sequence</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangpeterx/article/details/88663052">https://blog.csdn.net/zhangpeterx/article/details/88663052</a></p>
+<p>out of memory</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_28660035/article/details/80688427">https://blog.csdn.net/qq_28660035/article/details/80688427</a></p>
+<p>RuntimeError: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() is False. If you are running on a CPU-only machine, please use torch.load with map_location=’cpu’ to map your storages to the CPU.</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/quantum7/article/details/89333293">https://blog.csdn.net/quantum7/article/details/89333293</a></p>
 
     </div>
 
@@ -341,7 +366,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux%E4%B8%8B%E5%AE%89%E8%A3%85Anaconda"><span class="nav-number">1.</span> <span class="nav-text">Linux下安装Anaconda</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Anaconda%E5%AE%89%E8%A3%85pytorch"><span class="nav-number">2.</span> <span class="nav-text">Anaconda安装pytorch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu"><span class="nav-number">2.1.</span> <span class="nav-text">Ubuntu</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#win10"><span class="nav-number">2.2.</span> <span class="nav-text">win10</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux%E4%B8%8B%E5%AE%89%E8%A3%85Anaconda"><span class="nav-number">1.</span> <span class="nav-text">Linux下安装Anaconda</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Anaconda%E5%AE%89%E8%A3%85pytorch"><span class="nav-number">2.</span> <span class="nav-text">Anaconda安装pytorch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu"><span class="nav-number">2.1.</span> <span class="nav-text">Ubuntu</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#win10"><span class="nav-number">2.2.</span> <span class="nav-text">win10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WSL2"><span class="nav-number">2.3.</span> <span class="nav-text">WSL2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PyTorch%E4%BD%BF%E7%94%A8%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">PyTorch使用出现的问题</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -357,7 +382,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
