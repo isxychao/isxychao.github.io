@@ -28,7 +28,7 @@
 <meta property="og:description" content="Python官方文档（中文版）   Numpy   PyTorch中文文档  PyTorch   Pandas   scikit-learn   TensorFlow   Keras   matplotlib   pyecharts   wxpy 获取文件名操作os.listdir() 语法：os.listdir(path) 函数用途：输出路径下所有文件的文件名，包括文件夹 os.listdir">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-07-21T15:43:03.000Z">
-<meta property="article:modified_time" content="2021-07-24T04:50:58.862Z">
+<meta property="article:modified_time" content="2021-08-10T18:34:16.206Z">
 <meta property="article:author" content="xychao">
 <meta name="twitter:card" content="summary">
 
@@ -220,7 +220,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-24 12:50:58" itemprop="dateModified" datetime="2021-07-24T12:50:58+08:00">2021-07-24</time>
+                <time title="修改时间：2021-08-11 02:34:16" itemprop="dateModified" datetime="2021-08-11T02:34:16+08:00">2021-08-11</time>
               </span>
 
           
@@ -261,6 +261,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">name1 &#x3D; &quot;opencv_xphoto330d.lib&quot;</span><br><span class="line">name2 &#x3D; &quot;E:\\vs_code\\qtVideo\\opencv_xphoto330d.lib&quot;</span><br><span class="line">name3 &#x3D; &quot;E:\\vs_code\\qtVideo&quot;</span><br><span class="line">result1 &#x3D; os.path.split(name1)</span><br><span class="line">result2 &#x3D; os.path.split(name2)</span><br><span class="line">result3 &#x3D; os.path.split(name3)</span><br><span class="line">print(&quot;result1:&quot;,result1)</span><br><span class="line">print(&quot;result2:&quot;,result2)</span><br><span class="line">print(&quot;result3:&quot;,result3)</span><br><span class="line">print(&quot;type:&quot;,type(result1),type(result2),type(result3))</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">result1: (&#39;&#39;, &#39;opencv_xphoto330d.lib&#39;)</span><br><span class="line">result2: (&#39;E:\\vs_code\\qtVideo&#39;, &#39;opencv_xphoto330d.lib&#39;)</span><br><span class="line">result3: (&#39;E:\\vs_code&#39;, &#39;qtVideo&#39;)</span><br><span class="line">type: &lt;class &#39;tuple&#39;&gt; &lt;class &#39;tuple&#39;&gt;</span><br></pre></td></tr></table></figure>
 <p><strong>os.path.basename()</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import os.path</span><br><span class="line">filePath&#x3D;“K:&#x2F;Project&#x2F;FilterDriver&#x2F;DriverCodes&#x2F;hello.txt”</span><br><span class="line">print(os.path.basename(filePath))</span><br><span class="line">执行的结果仍然是hello.txt。</span><br></pre></td></tr></table></figure>
+<h1 id="常用库"><a href="#常用库" class="headerlink" title="常用库"></a>常用库</h1><h2 id="Matplotlib"><a href="#Matplotlib" class="headerlink" title="Matplotlib"></a>Matplotlib</h2><h1 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h1><h2 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import matplotlib.mlab as mlab</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line"></span><br><span class="line">x &#x3D; [x[0] for x in canzhao]</span><br><span class="line">y &#x3D; [y[1] for y in canzhao]</span><br><span class="line"></span><br><span class="line">fig &#x3D; plt.figure()</span><br><span class="line">plt.bar(x,y,0.01,color&#x3D;&quot;green&quot;)</span><br><span class="line">plt.xlabel(&quot;X-w_1&quot;)</span><br><span class="line">plt.ylabel(&quot;Y-rate&quot;)</span><br><span class="line">plt.title(&quot;bar chart&quot;)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="将print输入文件"><a href="#将print输入文件" class="headerlink" title="将print输入文件"></a>将print输入文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mylog &#x3D; open(&#39;recode.log&#39;, mode &#x3D; &#39;a&#39;,encoding&#x3D;&#39;utf-8&#39;)</span><br><span class="line">for i in range(10):</span><br><span class="line">    print(&quot;sdjlahjljag&quot;, file&#x3D;mylog)</span><br><span class="line">mylog.close()</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -341,7 +345,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%90%8D%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">获取文件名操作</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%90%8D%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">获取文件名操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%BA%93"><span class="nav-number">2.</span> <span class="nav-text">常用库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Matplotlib"><span class="nav-number">2.1.</span> <span class="nav-text">Matplotlib</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%BB%E5%9B%BE"><span class="nav-number">3.</span> <span class="nav-text">画图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="nav-number">3.1.</span> <span class="nav-text">直方图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%86print%E8%BE%93%E5%85%A5%E6%96%87%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">将print输入文件</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -357,7 +361,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
